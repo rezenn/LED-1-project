@@ -6,7 +6,7 @@ root = Tk()
 root.geometry('1280x800')
 root.resizable(0, 0)
 root.title('Add New Cargo')
-
+root.iconbitmap("cargo_icon.ico")
 
 
 #heading
@@ -127,8 +127,13 @@ Submit.place(x=400,y=600)
 Frame2=Frame(root, height="800",width="231", bg="#363740")
 Frame2.place(x=0, y=1)
 
+#image
+logo=ImageTk.PhotoImage(file='logo.jpg')
+bglabel=Label(root,image=logo)
+bglabel.place(x=5,y=2)
+
 cargo=Label(root, text="Cargo Management System", font=('Herald', 11, 'bold'), bg=('#363740'), fg='white')
-cargo.place(x=28,y=2)
+cargo.place(x=32,y=6)
 
 
 dashboard=Button(root, text="Dashboard", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")

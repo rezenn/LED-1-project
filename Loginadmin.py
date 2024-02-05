@@ -8,16 +8,13 @@ def password_visual():
         showhide.config(image=showimg)
     else:
         passwordEntry.config(show="")
-        showhide.config(image=hideimg)
-
-def home():
-    root.destroy()
-    import Employeelogin        
+        showhide.config(image=hideimg)       
 
 root = Tk()
 root.geometry('1280x800')
 root.resizable(0, 0)
 root.title('Login Page')
+root.iconbitmap('cargo_icon.ico')
 
 bgimage = ImageTk.PhotoImage(file="log102.jpg")
 bgLabel = Label(root, image=bgimage)
@@ -57,14 +54,10 @@ hideimg = PhotoImage(file="hide_eye.png")
 showhide = Button(root, image=showimg, width=25, height=22, command=password_visual, fg='white', bg='#FFFFFF', bd=0)
 showhide.place(x=403, y=440)
 
-# forgot password
-forgotbutton = Button(root, text='Forgot Password?', font=("Arial", 7, "bold"), bg="#e0dcdc", fg="firebrick1",
-                      cursor="hand2", activeforeground="firebrick1", bd=0)
-forgotbutton.place(x=335, y=470)
 
 # login button
 loginbutton = Button(root, text="Log in", font=("Open Sans", 13, "bold"), bg="black", fg="White", cursor="hand2",
-                    activeforeground="black", bd=0, width=28,command=home)
+                    activeforeground="black", bd=0, width=28)
 loginbutton.place(x=135, y=520)
 
 

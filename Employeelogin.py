@@ -1,19 +1,58 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
+import tkinter.messagebox as messagebox
+import mysql.connector as mysql
+  
+def forgot_password():
+    root.destroy()
+    import forgetpassword
+def signup():
+    root.destroy()
+    import register
+
+def login_user():
+    # Get values from Entry widgets
+    email = email_entry.get()
+    password = password_entry.get()
+
+    if email == "" or password == "":
+        messagebox.showerror("Error", "Enter both email and password")
+    else:
+        con = mysql.connect(
+            host="localhost",
+            user="root",
+            password="root"
+        )
+        cursor = con.cursor()
+
+        # Select the database
+        query = "USE cargo_mngt"
+        cursor.execute(query)
+
+        query = "SELECT * FROM register WHERE email=%s AND password=%s"
+        cursor.execute(query, (email, password))
+        row = cursor.fetchone()
+
+        if row is None:
+            messagebox.showerror("Error", "Invalid entry")
+        else:
+            root.destroy()
+            import contact
 
 def password_visual():
-    if passwordEntry.cget("show") == '':
-        passwordEntry.config(show='*')
+    if password_entry.cget("show") == '':
+        password_entry.config(show='*')
         showhide.config(image=showimg)
     else:
-        passwordEntry.config(show="")
+        password_entry.config(show="")
         showhide.config(image=hideimg)
 
 root = Tk()
 root.geometry('1280x800')
 root.resizable(0, 0)
 root.title('Login Page')
+root.iconbitmap('cargo_icon.ico')
 
 bgimage = ImageTk.PhotoImage(file="log102.jpg")
 bgLabel = Label(root, image=bgimage)
@@ -30,18 +69,18 @@ heading3 = Label(root, text='Enter your username and password below', font=("Ari
 heading3.place(x=163, y=310)
 
 # username
-username = Label(root, text='USERNAME', font=("Zen Dots", 7, "bold"), bg="#e0dcdc")
-username.place(x=135, y=365)
+email_label = Label(root, text='USERNAME', font=("Zen Dots", 7, "bold"), bg="#e0dcdc")
+email_label.place(x=135, y=365)
 
-usernameEntry = Entry(root, width=32, font=('Microsoft Yahei UI Light', 12))
-usernameEntry.place(x=135, y=380)
+email_entry = Entry(root, width=32, font=('Microsoft Yahei UI Light', 12))
+email_entry.place(x=135, y=380)
 
 # password
 passwordLabel = Label(root, text='PASSWORD', font=("Zen Dots", 7, "bold"), bg="#e0dcdc")
 passwordLabel.place(x=135, y=425)
 
-passwordEntry = Entry(root, width=32, font=('Microsoft Yahei UI Light', 12), show='*')
-passwordEntry.place(x=135, y=440)
+password_entry = Entry(root, width=32, font=('Microsoft Yahei UI Light', 12), show='*')
+password_entry.place(x=135, y=440)
 
 # eye image
 showimg = PhotoImage(file='show_eye.png')
@@ -51,17 +90,17 @@ showhide.place(x=403, y=440)
 
 # forgot password
 forgotbutton = Button(root, text='Forgot Password?', font=("Arial", 7, "bold"), bg="#e0dcdc", fg="firebrick1",
-                      cursor="hand2", activeforeground="firebrick1", bd=0)
+                      cursor="hand2", activeforeground="firebrick1", bd=0,command=forgot_password)
 forgotbutton.place(x=335, y=470)
 
 # login button
 loginbutton = Button(root, text="Log in", font=("Open Sans", 13, "bold"), bg="black", fg="White", cursor="hand2",
-                     activeforeground="black", bd=0, width=28)
+                     activeforeground="black", bd=0, width=28, command=login_user)
 loginbutton.place(x=135, y=520)
 
 # signup button
 signupbutton = Button(root, text="Sign Up", font=("Open Sans", 13, "bold"), bg="black", fg="White", cursor="hand2",
-                      activeforeground="black", bd=0, width=28)
+                      activeforeground="black", bd=0, width=28,command=signup)
 signupbutton.place(x=135, y=565)
 
 root.mainloop()
