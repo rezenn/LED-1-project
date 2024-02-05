@@ -2,12 +2,15 @@ from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
 
-      
+def log_in():
+    root.destroy()
+    import Employeelogin   
 
 root = Tk()
 root.geometry('1280x800')
 root.resizable(0, 0)
-root.title('Login Page')
+root.title('Forgot password')
+root.iconbitmap("cargo_icon.ico")
 
 bgimage = ImageTk.PhotoImage(file="log102.jpg")
 bgLabel = Label(root, image=bgimage)
@@ -48,7 +51,7 @@ password2_entry.place (x=255, y=440)
 Updatepassword = Button(root,width=33, text="Update Password",font=("Herald", 13),bg="#000000",fg="#ffffff")
 Updatepassword.place(x=135, y=500)
 
-login=Button(root,width=33,text="Login",bg="#000000",font=("Herald", 13),fg="#ffffff")
+login=Button(root,width=33,text="Login",bg="#000000",font=("Herald", 13),fg="#ffffff",command=log_in)
 login.place(x=135,y=550)
 
 

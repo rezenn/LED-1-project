@@ -4,7 +4,9 @@ from PIL import Image, ImageTk
 import tkinter.messagebox as messagebox
 import mysql.connector as mysql
   
-
+def forgot_password():
+    root.destroy()
+    import forgetpassword
 def signup():
     root.destroy()
     import register
@@ -88,7 +90,7 @@ showhide.place(x=403, y=440)
 
 # forgot password
 forgotbutton = Button(root, text='Forgot Password?', font=("Arial", 7, "bold"), bg="#e0dcdc", fg="firebrick1",
-                      cursor="hand2", activeforeground="firebrick1", bd=0)
+                      cursor="hand2", activeforeground="firebrick1", bd=0,command=forgot_password)
 forgotbutton.place(x=335, y=470)
 
 # login button

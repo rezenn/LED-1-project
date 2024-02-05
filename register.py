@@ -2,6 +2,12 @@ from tkinter import *
 import tkinter.messagebox as messagebox
 import mysql.connector as mysql
 from PIL import ImageTk
+from validate_email_address import validate_email
+
+
+# Function to check if the email is valid
+def is_valid_email(email):
+    return validate_email(email)
 
 #functions part
 def log():
@@ -28,7 +34,8 @@ def create():
 
     elif password != conform_password:
         messagebox.showinfo("Error", "The password doesnot match !!!")
-
+    elif not is_valid_email(email):
+        messagebox.showinfo("Error", "Invalid email address")
     #excess mysqlworkbench database
     else:
         con = mysql.connect(
