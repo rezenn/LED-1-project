@@ -18,6 +18,7 @@ root = Tk()
 root.geometry('1280x800')
 root.resizable(0, 0)
 root.title('Login Page')
+root.iconbitmap('cargo_icon.ico')
 
 bgimage = ImageTk.PhotoImage(file="log102.jpg")
 bgLabel = Label(root, image=bgimage)
