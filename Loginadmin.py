@@ -51,8 +51,8 @@ passwordEntry.place(x=135, y=440)
 # eye image
 showimg = PhotoImage(file='show_eye.png')
 hideimg = PhotoImage(file="hide_eye.png")
-showhide = Button(root, image=showimg, width=25, height=22, command=password_visual, fg='white', bg='#FFFFFF', bd=0)
-showhide.place(x=403, y=440)
+showhide = Button(root, image=showimg, width=25, height=19, command=password_visual, fg='white', bg='#FFFFFF', bd=0)
+showhide.place(x=400, y=442)
 
 
 # login button
