@@ -69,7 +69,7 @@ heading3 = Label(root, text='Enter your username and password below', font=("Ari
 heading3.place(x=163, y=310)
 
 # username
-email_label = Label(root, text='USERNAME', font=("Zen Dots", 7, "bold"), bg="#e0dcdc")
+email_label = Label(root, text='EMAIL', font=("Zen Dots", 7, "bold"), bg="#e0dcdc")
 email_label.place(x=135, y=365)
 
 email_entry = Entry(root, width=32, font=('Microsoft Yahei UI Light', 12))
