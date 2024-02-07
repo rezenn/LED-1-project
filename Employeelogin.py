@@ -65,27 +65,27 @@ heading1.place(x=112, y=200)
 heading2 = Label(root, text='Log In as Employee', font=("Rubik one", 24, "bold"), bg="#e0dcdc")
 heading2.place(x=140, y=250)
 
-heading3 = Label(root, text='Enter your username and password below', font=("Arial", 9), bg="#e0dcdc")
+heading3 = Label(root, text='Enter your username and password below', font=("Arial", 10), bg="#e0dcdc")
 heading3.place(x=163, y=310)
 
 # username
-email_label = Label(root, text='EMAIL', font=("Zen Dots", 7, "bold"), bg="#e0dcdc")
-email_label.place(x=135, y=365)
+email_label = Label(root, text='Email', font=("Herald", 9 ), bg="#e0dcdc")
+email_label.place(x=135, y=364)
 
-email_entry = Entry(root, width=32, font=('Microsoft Yahei UI Light', 12))
+email_entry = Entry(root, width=32, font=("Herald", 12))
 email_entry.place(x=135, y=380)
 
 # password
-passwordLabel = Label(root, text='PASSWORD', font=("Zen Dots", 7, "bold"), bg="#e0dcdc")
-passwordLabel.place(x=135, y=425)
+passwordLabel = Label(root, text='Password', font=("Herald", 9 ), bg="#e0dcdc")
+passwordLabel.place(x=135, y=424)
 
-password_entry = Entry(root, width=32, font=('Microsoft Yahei UI Light', 12), show='*')
+password_entry = Entry(root, width=32, font=("Herald", 12), show='*')
 password_entry.place(x=135, y=440)
 
 # eye image
 showimg = PhotoImage(file='show_eye.png')
 hideimg = PhotoImage(file="hide_eye.png")
-showhide = Button(root, image=showimg, width=25, height=20, command=password_visual, fg='white', bg='#FFFFFF', bd=0)
+showhide = Button(root, image=showimg, width=25, height=17, command=password_visual, fg='white', bg='#FFFFFF', bd=0)
 showhide.place(x=400, y=442)
 
 # forgot password

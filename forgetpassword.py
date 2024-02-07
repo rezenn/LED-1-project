@@ -97,7 +97,7 @@ email_entry.place(x=255, y=370)
 
 new_password_label = Label(root, text="New password :",font=("Herald", 11), bg="#e0dcdc")
 new_password_label.place(x=100, y=405)
-new_password_entry = Entry(root, width=35,bg="#d9d9d9")
+new_password_entry = Entry(root, width=35,bg="#d9d9d9", show='*')
 new_password_entry.place(x=255, y=405)
 
 # eye image
@@ -108,7 +108,7 @@ showhide.place(x=445, y=407)
 
 password2_label = Label(root, text="confirm Password :",font=("Herald", 11),bg="#e0dcdc")
 password2_label.place(x=100, y=440)
-password2_entry = Entry(root, width=35,bg="#d9d9d9")
+password2_entry = Entry(root, width=35,bg="#d9d9d9", show='*')
 password2_entry.place (x=255, y=440)
 
 # eye image

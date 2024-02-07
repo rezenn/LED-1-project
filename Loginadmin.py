@@ -1,13 +1,22 @@
 from tkinter import *
 from tkinter import ttk
+import tkinter.messagebox as messagebox
 from PIL import Image, ImageTk
 
+def admin_login():
+    if username_entry.get() == "admin123" and password_entry.get() == "asdfg@123":
+        root.destroy()
+        import addnewcargo
+    else:
+        messagebox.showinfo("Error","Incorrect username or password")
+
+
 def password_visual():
-    if passwordEntry.cget("show") == '':
-        passwordEntry.config(show='*')
+    if password_entry.cget("show") == '':
+        password_entry.config(show='*')
         showhide.config(image=showimg)
     else:
-        passwordEntry.config(show="")
+        password_entry.config(show="")
         showhide.config(image=hideimg)       
 
 root = Tk()
@@ -38,15 +47,15 @@ heading3.place(x=163, y=310)
 username = Label(root, text='USERNAME', font=("Zen Dots", 7, "bold"), bg="#e0dcdc")
 username.place(x=135, y=365)
 
-usernameEntry = Entry(root, width=32, font=('Herald', 13))
-usernameEntry.place(x=135, y=380)
+username_entry = Entry(root, width=32, font=('Herald', 13))
+username_entry.place(x=135, y=380)
 
 # password
-passwordLabel = Label(root, text='PASSWORD', font=("Zen Dots", 7, "bold"), bg="#e0dcdc")
-passwordLabel.place(x=135, y=425)
+password_label = Label(root, text='PASSWORD', font=("Zen Dots", 7, "bold"), bg="#e0dcdc")
+password_label.place(x=135, y=425)
 
-passwordEntry = Entry(root, width=32, font=('Herald', 13), show='*')
-passwordEntry.place(x=135, y=440)
+password_entry = Entry(root, width=32, font=('Herald', 13), show='*')
+password_entry.place(x=135, y=440)
 
 # eye image
 showimg = PhotoImage(file='show_eye.png')
@@ -57,7 +66,7 @@ showhide.place(x=400, y=442)
 
 # login button
 loginbutton = Button(root, text="Log in", font=("Open Sans", 13, "bold"), bg="black", fg="White", cursor="hand2",
-                    activeforeground="black", bd=0, width=28)
+                    activeforeground="black", bd=0, width=28,command=admin_login)
 loginbutton.place(x=135, y=520)
 
 
