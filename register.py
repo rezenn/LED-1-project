@@ -42,12 +42,12 @@ def create():
     email = email_entry.get()
     contact = contact_entry.get()
     password = password_entry.get()
-    conform_password = password2_entry.get()
+    confirm_password = password2_entry.get()
     #show error if the instructions are not followed
-    if name == "" or email == "" or contact == "" or password == "" or conform_password == "":
+    if name == "" or email == "" or contact == "" or password == "" or confirm_password == "":
         messagebox.showinfo("ALERT", "Enter every component !!!")
 
-    elif password != conform_password:
+    elif password != confirm_password:
         messagebox.showinfo("Error", "The password doesnot match !!!")
     elif not is_valid_email(email):
         messagebox.showinfo("Error", "Invalid email address")
@@ -63,7 +63,7 @@ def create():
         cursor = con.cursor()
         #Insert the data into database
         
-        cursor.execute("INSERT INTO register (name,contact,email,password,conform_password) VALUES (%s, %s, %s, %s, %s)", (name, contact, email, password, conform_password))
+        cursor.execute("INSERT INTO register (name,contact,email,password,confirm_password) VALUES (%s, %s, %s, %s, %s)", (name, contact, email, password, confirm_password))
         con.commit()
         messagebox.showinfo("Status", "Successfully registered")
         con.close()
@@ -105,7 +105,7 @@ email_entry.place(x=255, y=370)
 
 password_label = Label(root, text="Password :",font=("Herald", 11),bg="#e0dcdc")
 password_label.place(x=100, y=405)
-password_entry = Entry(root, width=35,bg="#d9d9d9")
+password_entry = Entry(root, width=35,bg="#d9d9d9", show='*')
 password_entry.place(x=255, y=405)
 # eye image
 showimg = PhotoImage(file='show_eye.png')
@@ -113,9 +113,9 @@ hideimg = PhotoImage(file="hide_eye.png")
 showhide = Button(root, image=showimg, width=22, height=14, command=password_visual, fg='white',bg="#e0dcdc", bd=0)
 showhide.place(x=445, y=407)
 
-password2_label = Label(root, text="Conform Password :",font=("Herald", 11),bg="#e0dcdc")
+password2_label = Label(root, text="confirm Password :",font=("Herald", 11),bg="#e0dcdc")
 password2_label.place(x=100, y=440)
-password2_entry = Entry(root, width=35,bg="#d9d9d9")
+password2_entry = Entry(root, width=35,bg="#d9d9d9", show='*')
 password2_entry.place (x=255, y=440)
 
 # eye image
