@@ -1,5 +1,34 @@
 from tkinter import *
 from PIL import ImageTk
+import tkinter.messagebox as messagebox
+
+def employee():
+    root.destroy()
+    import employee
+
+def dashboard():
+    root.destroy()
+    import dashboard
+
+def contact_us():
+    root.destroy()
+    import contact
+
+def add_new_cargo():
+    root.destroy()
+    import addnewcargo
+
+
+
+def log_out():
+    msg_box = messagebox.askquestion('Log out Application', 'Are you sure you want to exit the application?',
+                                        icon='warning')
+    if msg_box == 'yes':
+        root.destroy()
+    else:
+        messagebox.showinfo('Return', 'You will now return to the application screen')
+
+
 
 root = Tk()
 root.geometry('1280x800')
@@ -31,25 +60,40 @@ logo.place(x=5,y=2)
 
 cargo=Label(root, text="Cargo Management System", font=('Herald', 11, 'bold'), bg=('#363740'), fg='white')
 cargo.place(x=32,y=6)
-dashboard=Button(root, text="Dashboard", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
-dashboard.place(x=1,y=80)
+dashboard_button=Button(root, text="Dashboard", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', fg='white',
+                  bd=0, cursor="hand2", activebackground="#e0dcdc",command=dashboard)
+dashboard_button.place(x=1,y=80)
 
-addnewcargo=Button(root, text="Add New Cargo", font=("Herald", 13,"bold"),height=2,  width=20, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
-addnewcargo.place(x=1,y=129)
+add_new_cargo_button=Button(root, text="Add New Cargo", font=("Herald", 13,"bold"),height=2,  width=20, bg='#363740',
+                    fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=add_new_cargo)
+add_new_cargo_button.place(x=1,y=129)
 
-Viewcargo=Button(root, text="View Cargo", font=("Herald", 13,"bold"),height=2,  width=20, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
-Viewcargo.place(x=1,y=178)
-cargotype=Button(root, text="Cargo Type", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
-cargotype.place(x=1,y=227)
+View_cargo=Button(root, text="View Cargo", font=("Herald", 13,"bold"),height=2,  width=20, bg='#363740',
+                  fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+View_cargo.place(x=1,y=178)
+cargo_type=Button(root, text="Cargo Type", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740',
+                  fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+cargo_type.place(x=1,y=227)
 
-employee=Button(root, text="Employee", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
-employee.place(x=1,y=276)
+employees_button=Button(root, text="Employee", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', 
+                fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=employee)
+employees_button.place(x=1,y=276)
 
-Aboutus=Button(root, text="About Us", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
-Aboutus.place(x=1,y=325)
+About_us_button=Button(root, text="About Us", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', 
+               fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+About_us_button.place(x=1,y=325)
 
-contactus=Button(root, text="Contact Us", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
-contactus.place(x=1,y=374)
+contact_us_button=Button(root, text="Contact Us", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', 
+                 fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=contact_us)
+contact_us_button.place(x=1,y=374)
+
+
+
+
+Logout=Button(root, text="Log Out", font=("Herald", 13,"bold"), command=log_out, height=2, width=22, bg='#363740', 
+              fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+Logout.place(x=1,y=423)
+
 
 #about us info
 

@@ -41,6 +41,7 @@ def login_user():
             import contact
 
 def password_visual():
+    # Show and hide password with eye button
     if password_entry.cget("show") == '':
         password_entry.config(show='*')
         showhide.config(image=showimg)

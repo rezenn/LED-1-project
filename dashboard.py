@@ -2,10 +2,30 @@ from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
 
+def employee():
+    root.destroy()
+    import employee
+
+def about_us():
+    root.destroy()
+    import about
+
+def contact_us():
+    root.destroy()
+    import contact
+
+def add_new_cargo():
+    root.destroy()
+    import addnewcargo
+
+
+
+
 root = Tk()
 root.geometry('1280x800')
 root.resizable(0, 0)
-root.title('Add New Cargo')
+root.title('Dashboard')
+root.iconbitmap("cargo_icon.ico")
 
 #heading
 
@@ -52,31 +72,39 @@ frame6.place(x=940,y=320)
 Frame2=Frame(root,height="800",width="210",bg="#363740")
 Frame2.place(x=0,y=1)
 
-cargom=Label(root, text="Cargo Management System", font=('Rubik one', 10, 'bold'), bg=('#363740'), fg='white')
-cargom.place(x=28,y=2)
+cargo=Label(root, text="Cargo Management System", font=('Rubik one', 10, 'bold'), bg=('#363740'), fg='white')
+cargo.place(x=28,y=2)
 
-dashboard=Button(root, text="Dashboard", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+dashboard=Button(root, text="Dashboard", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', fg='white',
+                  bd=0, cursor="hand2", activebackground="#e0dcdc")
 dashboard.place(x=1,y=80)
 
-addnewcargo=Button(root, text="Add New Cargo", font=("Herald", 13,"bold"),height=2,  width=20, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+addnewcargo=Button(root, text="Add New Cargo", font=("Herald", 13,"bold"),height=2,  width=20, bg='#363740', fg='white',
+                    bd=0, cursor="hand2", activebackground="#e0dcdc",command=add_new_cargo)
 addnewcargo.place(x=1,y=129)
 
-Viewcargo=Button(root, text="View Cargo", font=("Herald", 13,"bold"),height=2,  width=20, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+Viewcargo=Button(root, text="View Cargo", font=("Herald", 13,"bold"),height=2,  width=20, bg='#363740', fg='white',
+                  bd=0, cursor="hand2", activebackground="#e0dcdc",)
 Viewcargo.place(x=1,y=178)
 
-cargotype=Button(root, text="Cargo Type", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+cargotype=Button(root, text="Cargo Type", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', fg='white', 
+                 bd=0, cursor="hand2", activebackground="#e0dcdc")
 cargotype.place(x=1,y=227)
 
-employee=Button(root, text="Employee", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
-employee.place(x=1,y=276)
+employees=Button(root, text="Employee", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', fg='white', 
+                bd=0, cursor="hand2", activebackground="#e0dcdc",command=employee)
+employees.place(x=1,y=276)
 
-Aboutus=Button(root, text="About Us", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+Aboutus=Button(root, text="About Us", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', fg='white',
+                bd=0, cursor="hand2", activebackground="#e0dcdc",command=about_us)
 Aboutus.place(x=1,y=325)
 
-contactus=Button(root, text="Contact Us", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+contactus=Button(root, text="Contact Us", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', fg='white', 
+                 bd=0, cursor="hand2", activebackground="#e0dcdc",command=contact_us)
 contactus.place(x=1,y=374)
 
-Subscription=Button(root, text="Subscription", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+Subscription=Button(root, text="Subscription", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', fg='white',
+                     bd=0, cursor="hand2", activebackground="#e0dcdc")
 Subscription.place(x=1,y=450)
 
 

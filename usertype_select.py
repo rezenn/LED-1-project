@@ -5,6 +5,8 @@ from PIL import Image, ImageTk
 root = Tk()
 root.geometry('1280x800')
 root.resizable(0, 0)
+root.title('Login')
+root.iconbitmap("cargo_icon.ico")
 
 bgimage=ImageTk.PhotoImage(file="cargoimg.jpeg")
 bglabel=Label(root,image=bgimage)
