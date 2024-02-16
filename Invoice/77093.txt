@@ -1,0 +1,14 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number:77093
+ Consignment ID:E6G0UKUI08
+ Client Name:ghjkl
+ Client Contect:nm
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
+ United Kingdom			12520		955
+                                                                    
+                                                                    
+ 			Sub Total:Rs.  11956600 
+ 			Gov Tax 5(%):Rs.  597830.0 
+ 			Total:Rs.  12554430.0 
