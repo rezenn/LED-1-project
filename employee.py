@@ -176,9 +176,6 @@ root.iconbitmap("cargo_icon.ico")
 Label1=Label(root, text="Employees", font=("Rubik one", 20), bg="#faeded")
 Label1.place(x=265, y=30)
 
-#frame
-Frame1=Frame(root, height="670",width="930", bg="#e0dcdc")
-Frame1.place(x=260, y=80)
 
 tableframe=Frame(root, bd=15,relief=RIDGE, bg="#e0dcdc")
 tableframe.place(x=265,y=90,width=965,height=660)

@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import Image, ImageTk
+import tkinter.messagebox as messagebox
 
 def employee():
     root.destroy()
@@ -20,6 +21,13 @@ def add_new_cargo():
 
 
 
+def log_out():
+    msg_box = messagebox.askquestion('Log out Application', 'Are you sure you want to exit the application?',
+                                        icon='warning')
+    if msg_box == 'yes':
+        root.destroy()
+    else:
+        messagebox.showinfo('Return', 'You will now return to the application screen')
 
 root = Tk()
 root.geometry('1280x800')
@@ -103,9 +111,9 @@ contactus=Button(root, text="Contact Us", font=("Herald", 13,"bold"), height=2, 
                  bd=0, cursor="hand2", activebackground="#e0dcdc",command=contact_us)
 contactus.place(x=1,y=374)
 
-Subscription=Button(root, text="Subscription", font=("Herald", 13,"bold"), height=2, width=20, bg='#363740', fg='white',
-                     bd=0, cursor="hand2", activebackground="#e0dcdc")
-Subscription.place(x=1,y=450)
+Logout=Button(root, text="Log Out", font=("Herald", 13,"bold"), command=log_out, height=2, width=20, bg='#363740', 
+              fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+Logout.place(x=1,y=423)
 
 
 root.mainloop()
