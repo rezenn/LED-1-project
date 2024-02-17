@@ -29,6 +29,7 @@ def dashboard():
 
 
 
+
 root = tk.Tk()
 root.geometry('1280x800')
 root.resizable(0, 0)
@@ -149,32 +150,32 @@ generate_button.place(x=605,y=120)
 sender=Label(root, text="Sender", font=("Rubik one", 15, "bold"), bg=("#e0dcdc") )
 sender.place(x=300, y=165)
 
-name_sender=Label(root, text="Full Name:", font=("Mulish", 12 ), bg=('#e0dcdc'))
-name_sender.place(x=300, y=215)
+namesender=Label(root, text="Full Name:", font=("Mulish", 12 ), bg=('#e0dcdc'))
+namesender.place(x=300, y=215)
 
-name_entry=Entry(root, width=30,textvariable=Sender_name, font=("Herald", 11))
-name_entry.place(x=435, y=215)
-
-
-Address_sender=Label(root, text="Address:", font=("Mulish", 12 ), bg=('#e0dcdc'))
-Address_sender.place(x=300, y=250)
-
-receiver_address_entry=Entry(root, width=30, font=("Herald", 11))
-receiver_address_entry.place(x=435, y=250)
+nameentry=Entry(root, width=30,textvariable=Sender_name, font=("Herald", 11))
+nameentry.place(x=435, y=215)
 
 
-Pin_code_sender=Label(root, text="ZIP Code:", font=("Mulish", 12 ), bg=('#e0dcdc'))
-Pin_code_sender.place(x=300, y=280)
+Addresssender=Label(root, text="Address:", font=("Mulish", 12 ), bg=('#e0dcdc'))
+Addresssender.place(x=300, y=250)
 
-Pin_code_sender_entry=Entry(root, width=30, font=("Herald", 11))
-Pin_code_sender_entry.place(x=435, y=280)
+Addressentry=Entry(root, width=30, font=("Herald", 11))
+Addressentry.place(x=435, y=250)
 
 
-contact_sender=Label(root, text="Contact:", font=("Mulish", 12 ), bg=('#e0dcdc'))
-contact_sender.place(x=300, y=310)
+Pincodesender=Label(root, text="ZIP Code:", font=("Mulish", 12 ), bg=('#e0dcdc'))
+Pincodesender.place(x=300, y=280)
 
-sender_contact_entry=Entry(root, width=30,textvariable=Sender_contact, font=("Herald", 11))
-sender_contact_entry.place(x=435, y=310)
+Pincodeentry=Entry(root, width=30, font=("Herald", 11))
+Pincodeentry.place(x=435, y=280)
+
+
+contactsender=Label(root, text="Contact:", font=("Mulish", 12 ), bg=('#e0dcdc'))
+contactsender.place(x=300, y=310)
+
+contactentry=Entry(root, width=30,textvariable=Sender_contact, font=("Herald", 11))
+contactentry.place(x=435, y=310)
 
 
 
@@ -186,32 +187,32 @@ receiver=Label(root, text="Receiver", font=("Rubik one", 15, "bold"), bg=("#e0dc
 receiver.place(x=730, y=170)
 
 
-name_receiver=Label(root, text="Full Name:", font=("Mulish", 12 ), bg=('#e0dcdc'))
-name_receiver.place(x=730, y=220)
+namereceiver=Label(root, text="Full Name:", font=("Mulish", 12 ), bg=('#e0dcdc'))
+namereceiver.place(x=730, y=220)
 
 receiver_name_entry=Entry(root,textvariable=receiver_name, width=30, font=("Herald", 11))
 receiver_name_entry.place(x=865, y=220)
 
 
-Address_receiver=Label(root, text="Address:", font=("Mulish", 12 ), bg=('#e0dcdc'))
-Address_receiver.place(x=730, y=250)
+Addressreceiver=Label(root, text="Address:", font=("Mulish", 12 ), bg=('#e0dcdc'))
+Addressreceiver.place(x=730, y=250)
 
-receiver_address_entry=Entry(root, width=30, font=("Herald", 11))
-receiver_address_entry.place(x=865, y=250)
-
-
-Pin_code_receiver=Label(root, text="ZIP Code:", font=("Mulish", 12 ), bg=('#e0dcdc'))
-Pin_code_receiver.place(x=730, y=280)
-
-Pin_code_reciever_entry=Entry(root, width=30, font=("Herald", 11))
-Pin_code_reciever_entry.place(x=865, y=280)
+Addressentry=Entry(root, width=30, font=("Herald", 11))
+Addressentry.place(x=865, y=250)
 
 
-contact_receiver=Label(root, text="Contact:", font=("Mulish", 12 ), bg=('#e0dcdc'))
-contact_receiver.place(x=730, y=310)
+Pincodereceiver=Label(root, text="ZIP Code:", font=("Mulish", 12 ), bg=('#e0dcdc'))
+Pincodereceiver.place(x=730, y=280)
 
-sender_contact_entry=Entry(root,textvariable=receiver_contact, width=30, font=("Herald", 11))
-sender_contact_entry.place(x=865, y=310)
+Pincodeentry=Entry(root, width=30, font=("Herald", 11))
+Pincodeentry.place(x=865, y=280)
+
+
+contactreceiver=Label(root, text="Contact:", font=("Mulish", 12 ), bg=('#e0dcdc'))
+contactreceiver.place(x=730, y=310)
+
+contactentry=Entry(root,textvariable=receiver_contact, width=30, font=("Herald", 11))
+contactentry.place(x=865, y=310)
 
 
 
@@ -219,16 +220,16 @@ sender_contact_entry.place(x=865, y=310)
 
 
 
-from_to_frame=Frame(root, height="55",width="880", relief=RIDGE, bd=9)
-from_to_frame.place(x=285,y=355)
+from_toframe=Frame(root, height="55",width="880", relief=RIDGE, bd=9)
+from_toframe.place(x=285,y=355)
 
 Country=Label(root, text="From: ", font=("Mulish", 12) )
 Country.place(x=300, y=370)
 
-country_entry=ttk.Combobox(root,font=("arial",9,),width=12,state="readonly", textvariable=from_n)
-country_entry['value']=('Nepal')
-country_entry.current(0)
-country_entry.place(x=351, y=371)
+countryentry=ttk.Combobox(root,font=("arial",9,),width=12,state="readonly", textvariable=from_n)
+countryentry['value']=('Nepal')
+countryentry.current(0)
+countryentry.place(x=351, y=371)
 
 
 #for rate per kg
@@ -287,13 +288,22 @@ combo_destination.place(x=515, y=371)
 combo_destination.current(0)
 combo_destination.bind("<<ComboboxSelected>>", rateforkg)
 
+
+
+
+# continue voli
+
+
+
 #rateperkg
+
 
 rateperkg=Label(root, text="Rate Per Kg:", font=("Mulish",12) ,bg='#e0dcdc')
 rateperkg.place(x=730, y=425)
 
 rateperkgent=ttk.Combobox(root, width=25,state="readonly",textvariable=rate_perkg, font=("Herald", 11))
 rateperkgent.place(x=865, y=425)
+
 
 #weight
 
@@ -312,7 +322,24 @@ combo_service['value']=('Select Cargo Category' ,"Electronic Device", "Agricultu
 combo_service.current(0)
 combo_service.place(x=1004, y=371)
 
-#Invoice frame in frame 
+
+
+
+
+
+#Invoice frame in frame 1
+
+
+
+
+
+
+
+#INvoice
+
+
+
+
 
 invoiceframe=Frame( bg="white")
 invoiceframe.place(x=300, y=445,width=380, height=265)
@@ -385,12 +412,29 @@ def totalaftertax():
       textarea.insert(END,f"\n \t\t\tGov Tax 5(%):Rs.  {tax_input.get()} ")
       textarea.insert(END,f"\n \t\t\tTotal:Rs.  {total_with_tax.get()} ")
 
+
+
+      
+      
+   
+
+
+
+
+
+
+
+
 #Invoice Heading
 
 invoicel=Label(root, text="Invoice", font=("Gotham", 12, "bold"),bg=("#e0dcdc"))
 invoicel.place(x=300, y=420)
 
+
+
+
 #Discription
+
 
 discription=Label(root, text="Discription:", font=("Mulish",12) ,bg='#e0dcdc')
 discription.place(x=730, y=455)
@@ -417,6 +461,8 @@ govtax.place(x=730, y=515)
 govtaxent=Entry(root,width=30, font=("Herald", 11), textvariable=tax_input )
 govtaxent.place(x=865, y=515)
 
+
+
 #totalamount
 
 totalamt=Label(root, text="Total Nrs.", font=("Mulish", 12), bg="#e0dcdc")
@@ -424,6 +470,13 @@ totalamt.place(x=730, y=545)
 
 totalamtent=Entry(root,width=30, font=("Herald", 11), textvariable=total_with_tax)
 totalamtent.place(x=865, y=545)
+
+
+
+
+
+
+
 
 total=Button(root, text="Total Amount", command=totalaftertax, font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
 total.place(x=780,y=585)
@@ -485,6 +538,10 @@ contact_us_button=Button(root, text="Contact Us", font=("Herald", 13,"bold"), he
                   fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=contact_us)
 contact_us_button.place(x=1,y=374)
 
+
+
+
+
 #command fro logout
 
 def log_out():
@@ -500,5 +557,9 @@ def log_out():
 Logout=Button(root, text="Log Out", font=("Herald", 13,"bold"), command=log_out, height=2, width=22, bg='#363740', 
               fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
 Logout.place(x=1,y=423)
+
+
+
+
 
 root.mainloop()
