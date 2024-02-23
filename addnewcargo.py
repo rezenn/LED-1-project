@@ -6,6 +6,7 @@ from tkinter.messagebox import askyesno, askquestion
 from tkinter import messagebox
 import random
 import string
+import random,os
 
 def employee():
     root.destroy()
@@ -27,9 +28,6 @@ def dashboard():
 
 
 
-
-
-
 root = tk.Tk()
 root.geometry('1280x800')
 root.resizable(0, 0)
@@ -45,7 +43,7 @@ Label1.place(x=265, y=30)
 
 
 
-#creating Variables for entries
+#creating Variables for   ssdeentries
 
 Sender_name=StringVar()
 Sender_contact=StringVar()
@@ -433,14 +431,14 @@ invoicel.place(x=300, y=420)
 
 
 
-#Discription
+#Billnumber
 
 
-discription=Label(root, text="Discription:", font=("Mulish",12) ,bg='#e0dcdc')
-discription.place(x=730, y=455)
+billlabel=Label(root, text="Bill Number:", font=("Mulish",12) ,bg='#e0dcdc')
+billlabel.place(x=730, y=455)
 
-Discriptionent=Entry(root, width=30, font=("Herald", 11))
-Discriptionent.place(x=865, y=455)
+billentry=Entry(root, width=30, font=("Herald", 11), state="readonly",textvariable=bill_num )
+billentry.place(x=865, y=455)
 
 
 #subtotal
@@ -475,24 +473,35 @@ totalamtent.place(x=865, y=545)
 
 
 
+#buttons
 
 
-
-total=Button(root, text="Total Amount", command=totalaftertax, font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+total=Button(root, text="Total Amount", command=totalaftertax, font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', cursor="hand2", activebackground="#e0dcdc")
 total.place(x=780,y=585)
 
-Submit=Button(root, text="Submit", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+Submit=Button(root, text="Submit", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', cursor="hand2", activebackground="#e0dcdc")
 Submit.place(x=930,y=585)
 
 
-PrintInvoice=Button(root, text="Print Invoice", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
-PrintInvoice.place(x=780,y=635)
+#PrintInvoice=Button(root, text="Print Invoice", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', cursor="hand2", activebackground="#e0dcdc")
+#PrintInvoice.place(x=780,y=635)
 
-SaveInvoice=Button(root, text="Save Invoice", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
-SaveInvoice.place(x=930,y=635)
 
-Exit=Button(root, command=root.destroy, text="Exit", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
-Exit.place(x=855,y=685)
+
+def save_invoice():
+   op=messagebox.askyesno("Save Invoice", "Do you want to save the Bill")
+   if op>0:
+      invoice_data=textarea.get(1.0,END)
+      f1=open("Invoice/"+str(bill_num.get())+".txt",'w')
+      f1.write(invoice_data)
+      op=messagebox.askyesno("Saved", f"Bill No:{ bill_num.get()} saved successfully")
+      f1.close()
+
+SaveInvoice=Button(root, text="Save Invoice", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', cursor="hand2", activebackground="#e0dcdc", command=save_invoice)
+SaveInvoice.place(x=780,y=635)
+
+Exit=Button(root, command=root.destroy, text="Exit", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', cursor="hand2", activebackground="#e0dcdc")
+Exit.place(x=930,y=635)
 
 
 #frame 2 
@@ -557,7 +566,6 @@ def log_out():
 Logout=Button(root, text="Log Out", font=("Herald", 13,"bold"), command=log_out, height=2, width=22, bg='#363740', 
               fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
 Logout.place(x=1,y=423)
-
 
 
 
