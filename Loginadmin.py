@@ -4,6 +4,7 @@ import tkinter.messagebox as messagebox
 from PIL import Image, ImageTk
 
 def admin_login():
+    #login information of admin
     if username_entry.get() == "admin123" and password_entry.get() == "asdfg@123":
         root.destroy()
         import addnewcargo
@@ -12,6 +13,7 @@ def admin_login():
 
 
 def password_visual():
+    # Show and hide password with eye button
     if password_entry.cget("show") == '':
         password_entry.config(show='*')
         showhide.config(image=showimg)
@@ -19,6 +21,8 @@ def password_visual():
         password_entry.config(show="")
         showhide.config(image=hideimg)       
 
+#GUI part
+        
 root = Tk()
 root.geometry('1280x800')
 root.resizable(0, 0)
@@ -33,7 +37,7 @@ bgLabel.place(x=0, y=0)
 Frame1=Frame(root, height="480",width="420", bg="#e0dcdc")
 Frame1.place(x=80, y=215)
 
-# headingsfor 3 
+# headings
 heading1 = Label(root, text='Cargo Management System', font=("Zen Dots", 20), bg="#e0dcdc")
 heading1.place(x=112, y=200)
 

@@ -34,7 +34,7 @@ root = tk.Tk()
 root.geometry('1280x800')
 root.resizable(0, 0)
 root.title('Add New Cargo')
-root.iconbitmap("cargo_icon.ico")
+root.iconbitmap("cargo.ico")
 
 
 
@@ -510,32 +510,25 @@ cargo=Label(root, text="Cargo Management System", font=('Herald', 11, 'bold'), b
 cargo.place(x=32,y=6)
 
 
-dashboard_button=Button(root, text="Dashboard", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740',
-                         fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=dashboard)
+dashboard_button=Button(root, text="Dashboard", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=dashboard)
 dashboard_button.place(x=1,y=80)
 
-addnewcargo=Button(root, text="Add New Cargo", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740',
-                    fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+addnewcargo=Button(root, text="Add New Cargo", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
 addnewcargo.place(x=1,y=129)
 
-Viewcargo=Button(root, text="View Cargo Details", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740',
-                  fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+Viewcargo=Button(root, text="View Cargo Details", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
 Viewcargo.place(x=1,y=178)
 
-cargotype=Button(root, text="Cargo Status", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740',
-                 fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+cargotype=Button(root, text="Cargo Status", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
 cargotype.place(x=1,y=227)
 
-employee_button=Button(root, text="Employee", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', 
-                fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=employee)
+employee_button=Button(root, text="Employee", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740',  fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=employee)
 employee_button.place(x=1,y=276)
 
-About_us_button=Button(root, text="About Us", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', 
-               fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=about_us)
+About_us_button=Button(root, text="About Us", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740',  fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=about_us)
 About_us_button.place(x=1,y=325)
 
-contact_us_button=Button(root, text="Contact Us", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740',
-                  fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=contact_us)
+contact_us_button=Button(root, text="Contact Us", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=contact_us)
 contact_us_button.place(x=1,y=374)
 
 
@@ -545,8 +538,7 @@ contact_us_button.place(x=1,y=374)
 #command fro logout
 
 def log_out():
-    msg_box = tk.messagebox.askquestion('Log out Application', 'Are you sure you want to exit the application?',
-                                        icon='warning')
+    msg_box = tk.messagebox.askquestion('Log out Application', 'Are you sure you want to exit the application?', icon='warning')
     if msg_box == 'yes':
         root.destroy()
     else:
@@ -554,8 +546,7 @@ def log_out():
 
 
 
-Logout=Button(root, text="Log Out", font=("Herald", 13,"bold"), command=log_out, height=2, width=22, bg='#363740', 
-              fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+Logout=Button(root, text="Log Out", font=("Herald", 13,"bold"), command=log_out, height=2, width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
 Logout.place(x=1,y=423)
 
 

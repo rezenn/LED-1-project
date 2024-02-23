@@ -112,7 +112,7 @@ def delete_employee():
     
     for item in selected_item:
         # Get the employee ID from the selected item
-        employee_id = tree.item(item, 'values')[-1]
+        employee_id = tree.item(item, 'values')[0]
 
     # Connect to MySQL database
     conn = mysql.connector.connect(
@@ -176,9 +176,6 @@ root.iconbitmap("cargo_icon.ico")
 Label1=Label(root, text="Employees", font=("Rubik one", 20), bg="#faeded")
 Label1.place(x=265, y=30)
 
-#frame
-Frame1=Frame(root, height="670",width="930", bg="#e0dcdc")
-Frame1.place(x=260, y=80)
 
 tableframe=Frame(root, bd=15,relief=RIDGE, bg="#e0dcdc")
 tableframe.place(x=265,y=90,width=965,height=660)
@@ -258,9 +255,14 @@ Viewcargo=Button(root, text="View Cargo", font=("Herald", 13,"bold"),height=2,  
                  cursor="hand2", activebackground="#e0dcdc")
 Viewcargo.place(x=1,y=178)
 
+<<<<<<< HEAD
+invoicedetails=Button(root, text="Invoice Details", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+invoicedetails.place(x=1,y=227)
+=======
 cargotype=Button(root, text="Cargo Type", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0, 
                  cursor="hand2", activebackground="#e0dcdc")
 cargotype.place(x=1,y=227)
+>>>>>>> 613e42a6f74bd203b853fc9f7148c81c37b407d3
 
 employee_button=Button(root, text="Employee", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0,
                  cursor="hand2", activebackground="#e0dcdc")
