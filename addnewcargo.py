@@ -6,8 +6,12 @@ from tkinter.messagebox import askyesno, askquestion
 from tkinter import messagebox
 import random
 import string
+<<<<<<< HEAD
 import random, os
 import mysql.connector as mysql
+=======
+import random,os
+>>>>>>> 1a00011e654948e683d633433d969019dfd9a494
 
 def employee():
     root.destroy()
@@ -64,6 +68,7 @@ def create():
         )
         cursor = con.cursor()
 
+<<<<<<< HEAD
         # Insert the data into the database
         try:
             cursor.execute(
@@ -77,6 +82,8 @@ def create():
             con.rollback()
         finally:
            con.close()
+=======
+>>>>>>> 1a00011e654948e683d633433d969019dfd9a494
 
 
 root = tk.Tk()
@@ -87,7 +94,15 @@ root.iconbitmap("cargo_icon.ico")
 #heading
 Label1=Label(root, text="Add New Cargo", font=("Rubik one", 20))
 Label1.place(x=265, y=30)
+<<<<<<< HEAD
 #creating Variables for entries
+=======
+
+
+
+#creating Variables for   ssdeentries
+
+>>>>>>> 1a00011e654948e683d633433d969019dfd9a494
 Sender_name=StringVar()
 Sender_contact=StringVar()
 receiver_name=StringVar()
@@ -317,6 +332,7 @@ invoice_label.place(x=300, y=420)
 
 
 
+<<<<<<< HEAD
 #Discription
 #Billnumber
 
@@ -326,6 +342,16 @@ bill_label.place(x=730, y=455)
 
 bill_entry=Entry(root, width=30, font=("Herald", 11), state="readonly",textvariable=bill_num )
 bill_entry.place(x=865, y=455)
+=======
+#Billnumber
+
+
+billlabel=Label(root, text="Bill Number:", font=("Mulish",12) ,bg='#e0dcdc')
+billlabel.place(x=730, y=455)
+
+billentry=Entry(root, width=30, font=("Herald", 11), state="readonly",textvariable=bill_num )
+billentry.place(x=865, y=455)
+>>>>>>> 1a00011e654948e683d633433d969019dfd9a494
 
 
 #subtotal
@@ -349,16 +375,23 @@ total_amt_entry.place(x=865, y=545)
 #buttons
 
 
+<<<<<<< HEAD
 
 total=Button(root, text="Total Amount", command=totalaftertax, font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
 total=Button(root, text="Total Amount", command=totalaftertax, font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', cursor="hand2", activebackground="#e0dcdc")
 total.place(x=780,y=585)
 
 Submit=Button(root, text="Submit", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+=======
+total=Button(root, text="Total Amount", command=totalaftertax, font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', cursor="hand2", activebackground="#e0dcdc")
+total.place(x=780,y=585)
+
+>>>>>>> 1a00011e654948e683d633433d969019dfd9a494
 Submit=Button(root, text="Submit", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', cursor="hand2", activebackground="#e0dcdc")
 Submit.place(x=930,y=585)
 
 
+<<<<<<< HEAD
 Print_invoice=Button(root, text="Print Invoice", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
 Print_invoice.place(x=780,y=635)
 
@@ -379,6 +412,27 @@ Exit.place(x=855,y=685)
 Save_invoice=Button(root, text="Save Invoice", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', cursor="hand2", activebackground="#e0dcdc", command=save_invoice)
 Save_invoice.place(x=780,y=635)
 
+=======
+#PrintInvoice=Button(root, text="Print Invoice", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', cursor="hand2", activebackground="#e0dcdc")
+#PrintInvoice.place(x=780,y=635)
+
+
+
+def save_invoice():
+   op=messagebox.askyesno("Save Invoice", "Do you want to save the Bill")
+   if op>0:
+      invoice_data=textarea.get(1.0,END)
+      f1=open("Invoice/"+str(bill_num.get())+".txt",'w')
+      f1.write(invoice_data)
+      op=messagebox.askyesno("Saved", f"Bill No:{ bill_num.get()} saved successfully")
+      f1.close()
+
+SaveInvoice=Button(root, text="Save Invoice", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', cursor="hand2", activebackground="#e0dcdc", command=save_invoice)
+SaveInvoice.place(x=780,y=635)
+
+Exit=Button(root, command=root.destroy, text="Exit", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', cursor="hand2", activebackground="#e0dcdc")
+Exit.place(x=930,y=635)
+>>>>>>> 1a00011e654948e683d633433d969019dfd9a494
 
 
 #frame 2 
@@ -424,4 +478,11 @@ Logout=Button(root, text="Log Out", font=("Herald", 13,"bold"), command=log_out,
 Logout.place(x=1,y=423)
 # ... (Rest of your code)
 
+<<<<<<< HEAD
 root.mainloop()
+=======
+
+
+
+root.mainloop()
+>>>>>>> 1a00011e654948e683d633433d969019dfd9a494

@@ -1,0 +1,8 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number: 66529
+ Consignment ID: 
+ Client Name: 
+ Client Contect: 
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
