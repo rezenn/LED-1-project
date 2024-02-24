@@ -1,0 +1,14 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number:61762
+ Consignment ID:Y67UGOQP6W
+ Client Name:ffjnfiowf
+ Client Contect:442
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
+ China			1341		610
+                                                                    
+                                                                    
+ 			Sub Total:Rs.  818010 
+ 			Gov Tax 5(%):Rs.  40900.5 
+ 			Total:Rs.  858910.5 

@@ -1,0 +1,14 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number:50564
+ Consignment ID:M90KMXBPY7
+ Client Name:rrfveref
+ Client Contect:546
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
+ Thailand			1		650
+                                                                    
+                                                                    
+ 			Sub Total:Rs.  650 
+ 			Gov Tax 5(%):Rs.  32.5 
+ 			Total:Rs.  682.5 

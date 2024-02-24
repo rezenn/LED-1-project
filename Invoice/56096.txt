@@ -1,0 +1,14 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number:56096
+ Consignment ID:U6570SLRJT
+ Client Name:dvssdv
+ Client Contect:46534
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
+ Australia			13		900
+                                                                    
+                                                                    
+ 			Sub Total:Rs.  11700 
+ 			Gov Tax 5(%):Rs.  585.0 
+ 			Total:Rs.  12285.0 
