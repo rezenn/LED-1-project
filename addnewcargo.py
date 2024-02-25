@@ -408,6 +408,8 @@ def save_invoice():
 SaveInvoice=Button(root, text="Save Invoice", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', cursor="hand2", activebackground="#e0dcdc", command=save_invoice)
 SaveInvoice.place(x=780,y=635)
 
+
+
 Exit=Button(root, command=root.destroy, text="Exit", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', cursor="hand2", activebackground="#e0dcdc")
 Exit.place(x=930,y=635)
 
