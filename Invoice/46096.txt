@@ -1,0 +1,14 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number:46096
+ Consignment ID:P5ZMYP7NOD
+ Client Name:sffsbg
+ Client Contect:546
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
+ United Kingdom			1		955
+                                                                    
+                                                                    
+ 			Sub Total:Rs.  955 
+ 			Gov Tax 5(%):Rs.  47.75 
+ 			Total:Rs.  1002.75 
