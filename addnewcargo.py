@@ -436,12 +436,10 @@ cargo_type.place(x=1,y=227)
 employee_button=Button(root, text="Employee", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', 
                 fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=employee)
 employee_button.place(x=1,y=276)
-About_us_button=Button(root, text="About Us", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', 
-               fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=about_us)
-About_us_button.place(x=1,y=325)
+
 contact_us_button=Button(root, text="Contact Us", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740',
                   fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=contact_us)
-contact_us_button.place(x=1,y=374)
+contact_us_button.place(x=1,y=325)
 #command fro logout
 def log_out():
     msg_box = tk.messagebox.askquestion('Log out Application', 'Are you sure you want to exit the application?',
@@ -452,7 +450,7 @@ def log_out():
         tk.messagebox.showinfo('Return', 'You will now return to the application screen')
 Logout=Button(root, text="Log Out", font=("Herald", 13,"bold"), command=log_out, height=2, width=22, bg='#363740', 
               fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
-Logout.place(x=1,y=423)
+Logout.place(x=1,y=375)
 # ... (Rest of your code)
 
 root.mainloop()

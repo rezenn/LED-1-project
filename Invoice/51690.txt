@@ -1,0 +1,14 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number:51690
+ Consignment ID:Y25ZECSOHP
+ Client Name:referferf
+ Client Contect:545
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
+ China			1		610
+                                                                    
+                                                                    
+ 			Sub Total:Rs.  610 
+ 			Gov Tax 5(%):Rs.  30.5 
+ 			Total:Rs.  640.5 
