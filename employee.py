@@ -255,14 +255,8 @@ Viewcargo=Button(root, text="View Cargo", font=("Herald", 13,"bold"),height=2,  
                  cursor="hand2", activebackground="#e0dcdc")
 Viewcargo.place(x=1,y=178)
 
-<<<<<<< HEAD
 invoicedetails=Button(root, text="Invoice Details", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
 invoicedetails.place(x=1,y=227)
-=======
-cargotype=Button(root, text="Cargo Type", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0, 
-                 cursor="hand2", activebackground="#e0dcdc")
-cargotype.place(x=1,y=227)
->>>>>>> 613e42a6f74bd203b853fc9f7148c81c37b407d3
 
 employee_button=Button(root, text="Employee", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0,
                  cursor="hand2", activebackground="#e0dcdc")
