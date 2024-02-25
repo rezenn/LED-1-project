@@ -4,6 +4,7 @@ import tkinter as tk
 from tkinter.messagebox import askyesno, askquestion
 from tkinter import messagebox
 from PIL import Image, ImageTk
+import mysql.connector
 
 
 
@@ -18,6 +19,57 @@ root.iconbitmap("cargo_icon.ico")
 def addnew_cargo():
     root.destroy()
     import addnewcargo
+
+def display_employees():
+    print("Displaying employees...")
+    # Connect to MySQL database
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="root",
+        database="cargo_mngt"
+    )
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM employees")
+    rows = cursor.fetchall()
+
+    # Clear existing data in the table
+    for row in Details_table.get_children():
+        Details_table.delete(row)
+
+    # Insert the fetched rows into the table
+    for row in rows:
+        Details_table.insert('', 'end', values=(row[0], row[1], row[2], row[3], row[4], row[5], row[6]))
+    conn.close()
+
+def delete_cargo_details():
+    selected_item = Details_table.selection()
+    if not selected_item:
+        messagebox.showerror("Error", "Please select an employee to delete.")
+        return
+    
+    for item in selected_item:
+        # Get the employee ID from the selected item
+        employee_id = Details_table.item(item, 'values')[0]
+
+    # Connect to MySQL database
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="root",
+        database="cargo_mngt"
+    )
+    cursor = conn.cursor()
+
+    # Execute the SQL query to delete the selected employee
+    cursor.execute("DELETE FROM employees WHERE employee_id = %s", (employee_id,))
+    conn.commit()
+    messagebox.showinfo("Status", "Employee deleted successfully")
+
+    conn.close()
+    Details_table.delete(selected_item)
+
+
 
 
 #heading
@@ -106,13 +158,12 @@ Details_table.pack(fill=BOTH,expand=1)
 
 # Button
 add=Button(root, text="Add", font=("Mulish", 18), bg = ("#8E8EBC"),fg="White", width=9 , height=1, command=addnew_cargo)
-add.place(x=350, y=670)
+add.place(x=550, y=670)
 
-update=Button(root, text="Update", font=("Mulish", 18), bg = ("#8E8EBC"),fg="White", width=9 , height=1 )
-update.place(x=650, y=670)
 
-delete=Button(root, text="Delete", font=("Mulish", 18), bg = ("#8E8EBC"),fg="White", width=9 , height=1)
-delete.place(x=960, y=670)
+
+delete=Button(root, text="Delete", font=("Mulish", 18), bg = ("#8E8EBC"),fg="White", width=9 , height=1, command=delete_cargo_details)
+delete.place(x=750, y=670)
 
 
 
@@ -198,7 +249,9 @@ Logout=Button(root, text="Log Out                ", font=("Herald", 13,"bold"), 
 Logout.place(x=1,y=423)
 
 
-
+# Button to display employees
+display_button = tk.Button(root, text="Display Employees", font=("Arial", 12, "bold"), bg="#4CAF50", fg="white", bd=0, command=display_employees)
+display_button.place(x=1070, y=758)
 
 
 root.mainloop()
