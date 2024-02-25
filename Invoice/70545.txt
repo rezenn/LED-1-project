@@ -1,0 +1,14 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number:70545
+ Consignment ID:X6OJOZGUN0
+ Client Name:we
+ Client Contect:4342
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
+ China			1424		610
+                                                                    
+                                                                    
+ 			Sub Total:Rs.  868640 
+ 			Gov Tax 5(%):Rs.  43432.0 
+ 			Total:Rs.  912072.0 

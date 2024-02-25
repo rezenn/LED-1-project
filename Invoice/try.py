@@ -8,7 +8,6 @@ import random
 import string
 import random, os
 import mysql.connector as mysql
-import random,os
 
 def employee():
     root.destroy()
@@ -52,33 +51,36 @@ def create():
         messagebox.showinfo("ALERT", "Enter every component !!!")
     elif receiver_name == "" or receiver_address == "" or receiver_contact == "" or receiver_address == "" or receiver_pin_code == "":
         messagebox.showinfo("ALERT", "Enter every component !!!")
-    elif from_country == "" or to_country == "" or receiver_contact == "" or weight == "" or rate_per_kg == "" or cargo_category == "":
+    elif from_country == "" or to_country == "" or weight == "" or rate_per_kg == "" or cargo_category == "":
         messagebox.showinfo("ALERT", "Enter every component !!!")
-    elif receiver_name == "" or bill == "" or sub_total_db == "" or gov_tax_db == "" or total_amt_db == "":
+    elif bill == "" or sub_total_db == "" or gov_tax_db == "" or total_amt_db == "":
         messagebox.showinfo("ALERT", "Enter every component !!!")
     else:
         con = mysql.connect(
-            host="localhost", 
+            host="localhost",
             user="root",
             password="root",
             database="cargo_mngt"
         )
         cursor = con.cursor()
 
-        # Insert the data into the database
-        try:
-            cursor.execute(
-                "INSERT INTO cargos (consignment_id, sender_full_name, sender_address, sender_zip_code, sender_contact, receiver_full_name, receiver_address, receiver_zip_code, receiver_contact, from_destination, to_destination, weight, cargo_category, invoice_id, rate_per_kg, sub_total, gov_tax, total) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
-                (consignment_id, sender_name, sender_address, sender_pin_code, sender_contact, receiver_name, receiver_address, receiver_pin_code, receiver_contact, from_country, to_country, weight, cargo_category, bill, rate_per_kg, sub_total_db, gov_tax_db, total_amt_db)
-            )
-            con.commit()
-            messagebox.showinfo("Status", "Successfully registered")
-        except mysql.Error as e:
-            print(f"Error: {e}")
-            con.rollback()
-        finally:
-           con.close()
+        # Insert the data into the database for the 'client' table
+        cursor.execute(
+            "INSERT INTO client (consignment_id, sender_full_name, sender_address, sender_zip_code, sender_contact, receiver_full_name, receiver_address, receiver_zip_code, receiver_contact) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
+            (consignment_id, sender_name, sender_address, sender_pin_code, sender_contact, receiver_name,
+             receiver_address, receiver_pin_code, receiver_contact)
+        )
+        con.commit()
 
+        # Insert the data into the database for the 'cargo' table
+        cursor.execute(
+            "INSERT INTO cargo (consignment_id, from_destination, to_destination, weight, cargo_category, rate_per) VALUES (%s, %s, %s, %s, %s)",
+            (consignment_id, from_country, to_country, weight, cargo_category, rate_per_kg)
+        )
+        con.commit()
+
+        messagebox.showinfo("Status", "Successfully registered")
+        con.close()
 
 root = tk.Tk()
 root.geometry('1280x800')
@@ -89,11 +91,6 @@ root.iconbitmap("cargo_icon.ico")
 Label1=Label(root, text="Add New Cargo", font=("Rubik one", 20))
 Label1.place(x=265, y=30)
 #creating Variables for entries
-
-
-
-#creating Variables for   ssdeentries
-
 Sender_name=StringVar()
 Sender_contact=StringVar()
 receiver_name=StringVar()
@@ -332,14 +329,6 @@ bill_label.place(x=730, y=455)
 
 bill_entry=Entry(root, width=30, font=("Herald", 11), state="readonly",textvariable=bill_num )
 bill_entry.place(x=865, y=455)
-#Billnumber
-
-
-billlabel=Label(root, text="Bill Number:", font=("Mulish",12) ,bg='#e0dcdc')
-billlabel.place(x=730, y=455)
-
-billentry=Entry(root, width=30, font=("Herald", 11), state="readonly",textvariable=bill_num )
-billentry.place(x=865, y=455)
 
 
 #subtotal
@@ -369,16 +358,19 @@ total=Button(root, text="Total Amount", command=totalaftertax, font=("Herald", 1
 total.place(x=780,y=585)
 
 Submit=Button(root, text="Submit", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
-total=Button(root, text="Total Amount", command=totalaftertax, font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', cursor="hand2", activebackground="#e0dcdc")
-total.place(x=780,y=585)
-
-Submit=Button(root, text="Submit", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', cursor="hand2", activebackground="#e0dcdc",command=create)
+Submit=Button(root, text="Submit", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', cursor="hand2", activebackground="#e0dcdc")
 Submit.place(x=930,y=585)
 
 
 Print_invoice=Button(root, text="Print Invoice", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
 Print_invoice.place(x=780,y=635)
+#Print_invoice=Button(root, text="Print Invoice", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', cursor="hand2", activebackground="#e0dcdc")
+#Print_invoice.place(x=780,y=635)
 
+
+
+Save_invoice=Button(root, text="Save Invoice", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=create)
+Save_invoice.place(x=930,y=635)
 def save_invoice():
    op=messagebox.askyesno("Save Invoice", "Do you want to save the Bill")
    if op>0:
@@ -388,28 +380,11 @@ def save_invoice():
       op=messagebox.askyesno("Saved", f"Bill No:{ bill_num.get()} saved successfully")
       f1.close()
 
-
-
+Exit=Button(root, command=root.destroy, text="Exit", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+Exit.place(x=855,y=685)
 Save_invoice=Button(root, text="Save Invoice", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', cursor="hand2", activebackground="#e0dcdc", command=save_invoice)
 Save_invoice.place(x=780,y=635)
 
-
-
-
-def save_invoice():
-   op=messagebox.askyesno("Save Invoice", "Do you want to save the Bill")
-   if op>0:
-      invoice_data=textarea.get(1.0,END)
-      f1=open("Invoice/"+str(bill_num.get())+".txt",'w')
-      f1.write(invoice_data)
-      op=messagebox.askyesno("Saved", f"Bill No:{ bill_num.get()} saved successfully")
-      f1.close()
-
-SaveInvoice=Button(root, text="Save Invoice", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', cursor="hand2", activebackground="#e0dcdc", command=save_invoice)
-SaveInvoice.place(x=780,y=635)
-
-Exit=Button(root, command=root.destroy, text="Exit", font=("Herald", 12,"bold"), height=1, width=13, bg='#8E8EBC', fg='white', cursor="hand2", activebackground="#e0dcdc")
-Exit.place(x=930,y=635)
 
 
 #frame 2 
@@ -456,4 +431,3 @@ Logout.place(x=1,y=423)
 # ... (Rest of your code)
 
 root.mainloop()
-

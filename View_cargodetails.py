@@ -15,6 +15,11 @@ root.iconbitmap("cargo_icon.ico")
 
 
 
+def addnew_cargo():
+    root.destroy()
+    import addnewcargo
+
+
 #heading
 
 Label1=Label(root, text="View Cargo Details", font=("Rubik one", 20))
@@ -33,6 +38,12 @@ boldframe=Frame(root, bd=15,relief=RIDGE, bg="#e0dcdc")
 boldframe.place(x=265,y=90,width=920,height=650)
 
 
+
+
+
+
+
+
 consignment_id=Label(root, text="Consignment ID:", font=("Mulish", 12), bg="#e0dcdc")
 consignment_id.place(x=300,y=123)
 
@@ -47,7 +58,7 @@ Search_button.place(x=605,y=120)
 #tableframe
 
 table_frame=Frame(root,bd=1,relief=RIDGE)
-table_frame.place(x=282, y=170, width=888, height=550)
+table_frame.place(x=282, y=170, width=888, height=490)
 
 scroll_x=ttk.Scrollbar(table_frame,orient=HORIZONTAL)
 scroll_y=ttk.Scrollbar(table_frame,orient=VERTICAL)
@@ -93,7 +104,15 @@ Details_table.pack(fill=BOTH,expand=1)
 
 
 
+# Button
+add=Button(root, text="Add", font=("Mulish", 18), bg = ("#8E8EBC"),fg="White", width=9 , height=1, command=addnew_cargo)
+add.place(x=350, y=670)
 
+update=Button(root, text="Update", font=("Mulish", 18), bg = ("#8E8EBC"),fg="White", width=9 , height=1 )
+update.place(x=650, y=670)
+
+delete=Button(root, text="Delete", font=("Mulish", 18), bg = ("#8E8EBC"),fg="White", width=9 , height=1)
+delete.place(x=960, y=670)
 
 
 

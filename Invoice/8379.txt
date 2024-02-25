@@ -1,0 +1,14 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number:8379
+ Consignment ID:E9KSY99V9P
+ Client Name:dvfbvfdb
+ Client Contect:4535434
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
+ Australia			1		900
+                                                                    
+                                                                    
+ 			Sub Total:Rs.  900 
+ 			Gov Tax 5(%):Rs.  45.0 
+ 			Total:Rs.  945.0 

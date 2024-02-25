@@ -1,0 +1,14 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number:19662
+ Consignment ID:N2Y74UCAKY
+ Client Name:qwertyui
+ Client Contect:242442
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
+ Finland			134		880
+                                                                    
+                                                                    
+ 			Sub Total:Rs.  117920 
+ 			Gov Tax 5(%):Rs.  5896.0 
+ 			Total:Rs.  123816.0 

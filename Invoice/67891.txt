@@ -1,0 +1,14 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number:67891
+ Consignment ID:X0HOZN58G0
+ Client Name:hhjvfeee
+ Client Contect:4543
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
+ France			1		910
+                                                                    
+                                                                    
+ 			Sub Total:Rs.  910 
+ 			Gov Tax 5(%):Rs.  45.5 
+ 			Total:Rs.  955.5 

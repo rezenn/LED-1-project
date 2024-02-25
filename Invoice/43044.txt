@@ -1,0 +1,14 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number:43044
+ Consignment ID:S0JYEYXZKR
+ Client Name:scs
+ Client Contect:dd
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
+ Australia			1552		900
+                                                                    
+                                                                    
+ 			Sub Total:Rs.  1396800 
+ 			Gov Tax 5(%):Rs.  69840.0 
+ 			Total:Rs.  1466640.0 

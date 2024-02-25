@@ -1,0 +1,8 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number: 45615
+ Consignment ID: 
+ Client Name: 
+ Client Contect: 
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------

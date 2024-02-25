@@ -1,0 +1,14 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number:59628
+ Consignment ID:W7ZRL86XZ2
+ Client Name:fewaerfer
+ Client Contect:54
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
+ Thailand			145		650
+                                                                    
+                                                                    
+ 			Sub Total:Rs.  94250 
+ 			Gov Tax 5(%):Rs.  4712.5 
+ 			Total:Rs.  98962.5 

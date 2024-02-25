@@ -257,6 +257,12 @@ Viewcargo.place(x=1,y=178)
 
 invoicedetails=Button(root, text="Invoice Details", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
 invoicedetails.place(x=1,y=227)
+<<<<<<< HEAD
+=======
+cargotype=Button(root, text="Cargo Type", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0, 
+                 cursor="hand2", activebackground="#e0dcdc")
+cargotype.place(x=1,y=227)
+>>>>>>> 206178aa7796e170d21698f081d2605c583aee18
 
 employee_button=Button(root, text="Employee", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0,
                  cursor="hand2", activebackground="#e0dcdc")
