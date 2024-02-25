@@ -22,8 +22,7 @@ def add_new_cargo():
 
 
 def log_out():
-    msg_box = messagebox.askquestion('Log out Application', 'Are you sure you want to exit the application?',
-                                        icon='warning')
+    msg_box = messagebox.askquestion('Log out Application', 'Are you sure you want to exit the application?', icon='warning')
     if msg_box == 'yes':
         root.destroy()
     else:
@@ -37,7 +36,7 @@ def display_employees():
         host="localhost",
         user="root",
         password="root",
-        database="cargo_mngt"
+        database="sql1"
     )
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM employees")
@@ -81,7 +80,7 @@ def add_employee():
         host="localhost",
         user="root",
         password="root",
-        database="cargo_mngt"
+        database="sql1"
     )
     cursor = conn.cursor()
 
@@ -119,7 +118,7 @@ def delete_employee():
         host="localhost",
         user="root",
         password="root",
-        database="cargo_mngt"
+        database="sql1"
     )
     cursor = conn.cursor()
 
@@ -138,7 +137,7 @@ def update_employee():
         return
 
     # Get the employee ID from the selected item
-    employee_id = tree.item(selected_item, 'values')[-1]
+    employee_id = tree.item(selected_item, 'values')[0]
 
     updated_name = name_entry.get()
     updated_post = post_entry.get()
@@ -147,14 +146,20 @@ def update_employee():
     updated_contact = contact_entry.get()
     updated_username = username_entry.get()
 
-
+    print("Employee ID:", employee_id)
+    print("Updated Name:", updated_name)
+    print("Updated Post:", updated_post)
+    print("Updated Address:", updated_address)
+    print("Updated Email:", updated_email)
+    print("Updated Contact:", updated_contact)
+    print("Updated Username:", updated_username)
 
     # Connect to MySQL database
     conn = mysql.connector.connect(
         host="localhost",
         user="root",
         password="root",
-        database="cargo_mngt"
+        database="sql1"
     )
     cursor = conn.cursor()
 
@@ -172,6 +177,9 @@ root.resizable(0, 0)
 root.title('Add New Cargo')
 root.iconbitmap("cargo_icon.ico")
 
+Frame1=Frame(root, height="677",width="977", bg="#e0dcdc")
+Frame1.place(x=260, y=80)
+
 #heading
 Label1=Label(root, text="Employees", font=("Rubik one", 20), bg="#faeded")
 Label1.place(x=265, y=30)
@@ -180,7 +188,7 @@ Label1.place(x=265, y=30)
 tableframe=Frame(root, bd=15,relief=RIDGE, bg="#e0dcdc")
 tableframe.place(x=265,y=90,width=965,height=660)
 
-#writingPART
+#writing   ePART
 
 name_label=Label(root, text="Employee Name:", font=("Mulish", 12, 'bold' ), bg=('#e0dcdc'))
 name_label.place(x=300, y=108)
@@ -235,49 +243,39 @@ update.place(x=650, y=675)
 delete=Button(root, text="Delete", font=("Mulish", 18), bg = ("#8E8EBC"),fg="White", width=10 , height=1, command=delete_employee)
 delete.place(x=960, y=675)
 
-#left side
+#frame
 
 Frame2=Frame(root, height="800",width="231", bg="#363740")
 Frame2.place(x=0, y=1)
 
+
+#left side
+
 cargo=Label(root, text="Cargo Management System", font=('Herald', 11, 'bold'), bg=('#363740'), fg='white')
 cargo.place(x=28,y=2)
 
-dashboard_button=Button(root, text="Dashboard", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0,
-                  cursor="hand2", activebackground="#e0dcdc",command=dashboard)
+dashboard_button=Button(root, text="Dashboard", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0,cursor="hand2", activebackground="#e0dcdc",command=dashboard)
 dashboard_button.place(x=1,y=80)
 
-add_new_cargo_button=Button(root, text="Add New Cargo", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740', fg='white', bd=0, 
-                   cursor="hand2", activebackground="#e0dcdc",command=add_new_cargo)
+add_new_cargo_button=Button(root, text="Add New Cargo", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=add_new_cargo)
 add_new_cargo_button.place(x=1,y=129)
 
-Viewcargo=Button(root, text="View Cargo", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740', fg='white', bd=0, 
-                 cursor="hand2", activebackground="#e0dcdc")
+Viewcargo=Button(root, text="View Cargo", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740', fg='white', bd=0,  cursor="hand2", activebackground="#e0dcdc")
 Viewcargo.place(x=1,y=178)
 
 invoicedetails=Button(root, text="Invoice Details", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
 invoicedetails.place(x=1,y=227)
-<<<<<<< HEAD
-=======
-cargotype=Button(root, text="Cargo Type", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0, 
-                 cursor="hand2", activebackground="#e0dcdc")
-cargotype.place(x=1,y=227)
->>>>>>> 206178aa7796e170d21698f081d2605c583aee18
 
-employee_button=Button(root, text="Employee", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0,
-                 cursor="hand2", activebackground="#e0dcdc")
+employee_button=Button(root, text="Employee", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0,  cursor="hand2", activebackground="#e0dcdc")
 employee_button.place(x=1,y=276)
 
-About_us_button=Button(root, text="About Us", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0,
-                cursor="hand2", activebackground="#e0dcdc",command=about_us)
+About_us_button=Button(root, text="About Us", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=about_us)
 About_us_button.place(x=1,y=325)
 
-contact_us_button=Button(root, text="Contact Us", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0, 
-                 cursor="hand2", activebackground="#e0dcdc",command=contact_us)
+contact_us_button=Button(root, text="Contact Us", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0,   cursor="hand2", activebackground="#e0dcdc",command=contact_us)
 contact_us_button.place(x=1,y=374)
 
-Logout=Button(root, text="Log Out", font=("Herald", 13,"bold"), command=log_out, height=2, width=22, bg='#363740', 
-              fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+Logout=Button(root, text="Log Out", font=("Herald", 13,"bold"), command=log_out, height=2, width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
 Logout.place(x=1,y=423)
 
 
@@ -312,6 +310,6 @@ tree.pack(fill=tk.BOTH, expand=True)
 
 # Button to display employees
 display_button = tk.Button(root, text="Display Employees", font=("Arial", 12, "bold"), bg="#4CAF50", fg="white", bd=0, command=display_employees)
-display_button.place(x=1070, y=758)
+display_button.place(x=1070, y=760)
 
 root.mainloop()
