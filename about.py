@@ -87,13 +87,9 @@ contact_us_button=Button(root, text="Contact Us", font=("Herald", 13,"bold"), he
                  fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=contact_us)
 contact_us_button.place(x=1,y=374)
 
-
-
-
 Logout=Button(root, text="Log Out", font=("Herald", 13,"bold"), command=log_out, height=2, width=22, bg='#363740', 
               fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
 Logout.place(x=1,y=423)
-
 
 #about us info
 

@@ -5,6 +5,7 @@ import mysql.connector as mysql
 import tkinter.messagebox as messagebox
 
 def update_login_info():
+    #update passwords and information of the user
     name = name_entry.get()
     email = email_entry.get()
     contact = contact_entry.get()
@@ -43,6 +44,7 @@ def clear():
     password2_entry.delete(0, END)
 
 def password_visual():
+    # Show and hide password with eye button
     if new_password_entry.cget("show") == '':
         new_password_entry.config(show='*')
         showhide.config(image=showimg)
@@ -62,6 +64,8 @@ def log_in():
     root.destroy()
     import Employeelogin
 
+#GUI part
+    
 root = Tk()
 root.geometry('1280x800')
 root.resizable(0, 0)
@@ -78,7 +82,6 @@ company_name.place(x=100, y=190)
 register_label = Label(root, text="Reset Password", font=("Herald", 21, "bold"), bg="#e0dcdc")
 register_label.place(x=180, y=230)
 
-# ... (rest of the code remains unchanged)
 name_label = Label(root, text="Name :",font=("Herald", 11),bg="#e0dcdc")
 name_label.place(x=100, y=300)
 name_entry = Entry(root, width=35,bg="#d9d9d9")

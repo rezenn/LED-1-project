@@ -1,0 +1,14 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number:61838
+ Consignment ID:S6IG59CCQL
+ Client Name:test
+ Client Contect:test
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
+ United States			12		1070
+                                                                    
+                                                                    
+ 			Sub Total:Rs.  12840 
+ 			Gov Tax 5(%):Rs.  642.0 
+ 			Total:Rs.  13482.0 

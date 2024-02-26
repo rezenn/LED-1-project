@@ -1,0 +1,8 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number: 7403
+ Consignment ID: 
+ Client Name: 
+ Client Contect: 
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
