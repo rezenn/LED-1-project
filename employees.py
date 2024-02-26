@@ -36,7 +36,7 @@ def display_employees():
         host="localhost",
         user="root",
         password="root",
-        database="sql1"
+        database="cargo_mngt"
     )
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM employees")
@@ -80,7 +80,7 @@ def add_employee():
         host="localhost",
         user="root",
         password="root",
-        database="sql1"
+        database="cargo_mngt"
     )
     cursor = conn.cursor()
 
@@ -118,7 +118,7 @@ def delete_employee():
         host="localhost",
         user="root",
         password="root",
-        database="sql1"
+        database="cargo_mngt"
     )
     cursor = conn.cursor()
 
@@ -159,7 +159,7 @@ def update_employee():
         host="localhost",
         user="root",
         password="root",
-        database="sql1"
+        database="cargo_mngt"
     )
     cursor = conn.cursor()
 

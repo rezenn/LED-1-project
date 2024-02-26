@@ -1,0 +1,14 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number:63002
+ Consignment ID:Z9TFNCVBEG
+ Client Name:hvgjvj
+ Client Contect:778878
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
+ United Kingdom			1		955
+                                                                    
+                                                                    
+ 			Sub Total:Rs.  955 
+ 			Gov Tax 5(%):Rs.  47.75 
+ 			Total:Rs.  1002.75 
