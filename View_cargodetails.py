@@ -211,10 +211,10 @@ cargo.place(x=32,y=6)
 dashboard=Button(root, text="Dashboard            ", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
 dashboard.place(x=1,y=80)
 
-addnewcargo=Button(root, text="  Add New Cargo       ", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+addnewcargo=Button(root, text="Add New Cargo       ", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
 addnewcargo.place(x=1,y=129)
 
-Viewcargo=Button(root, text="       View Cargo Details       ", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
+Viewcargo=Button(root, text="     View Cargo Details       ", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
 Viewcargo.place(x=1,y=178)
 
 cargotype=Button(root, text="Cargo Status         ", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
