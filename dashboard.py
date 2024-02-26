@@ -14,7 +14,7 @@ def about_us():
 def contact_us():
     root.destroy()
     import contact
-
+#test function
 def add_new_cargo():
     root.destroy()
     import addnewcargo

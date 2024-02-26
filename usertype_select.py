@@ -20,7 +20,7 @@ bgimage=ImageTk.PhotoImage(file="cargoimg.jpeg")
 bglabel=Label(root,image=bgimage)
 bglabel.place(x=0,y=0)
 
-label2=Label(text="Cargo Management System",font=("Zen Dots",20,"bold"),fg="gray",bg="white")
+label2=Label(text="Cargo Management System",font=("Zen Dots",20,"bold"),fg="black",bg="white")
 label2.place(x=110,y=200)
 
 
