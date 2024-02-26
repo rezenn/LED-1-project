@@ -35,6 +35,9 @@ root.resizable(0, 0)
 root.title('Dashboard')
 root.iconbitmap("cargo_icon.ico")
 
+bgimage = ImageTk.PhotoImage(file="dashboard.jpg")
+bgLabel = Label(root, image=bgimage)
+bgLabel.place(x=0, y=0)
 #heading
 
 Label1=Label(root,text="Dashboard",font=("Rubik one",20),bg="#Faeded")
@@ -66,6 +69,7 @@ frame5.place(x=620,y=320)
 
 frame6=Frame(root,height="140",width="190",bg="gray")
 frame6.place(x=940,y=320)
+
 
 
 
