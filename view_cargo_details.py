@@ -4,13 +4,13 @@ import tkinter as tk
 from tkinter.messagebox import askyesno, askquestion
 from tkinter import messagebox
 from PIL import Image, ImageTk
+import mysql.connector
 
 
 
 root = tk.Tk()
 root.geometry('1280x800')
 root.resizable(0, 0)
-#creating a root
 root.title('View Cargo Details')
 root.iconbitmap("cargo_icon.ico")
 
@@ -32,7 +32,7 @@ def display_cargo():
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM cargos")
     rows = cursor.fetchall()
-
+#uuk
     # Clear existing data in the table
     for row in Details_table.get_children():
         Details_table.delete(row)
@@ -125,10 +125,10 @@ scroll_y.config(command=Details_table.yview)
 
 Details_table.heading('Consignment ID', text='Consignment ID')
 Details_table.heading('Cargo Destination', text='Cargo Destination')
-Details_table.heading('Sender', text='Sender')
-Details_table.heading('S.Contact', text='S.Contact')
-Details_table.heading('Receiver', text='Receiver')
-Details_table.heading('R.contact', text='R.contact')
+Details_table.heading('Sender', text='Sender Name')
+Details_table.heading('S.Contact', text='Sender Contact')
+Details_table.heading('Receiver', text='Receiver Name')
+Details_table.heading('R.contact', text='Receiver Contact')
 Details_table.heading('R.Zip Code', text='R.Zip Code')
 Details_table.heading('Total', text='Total')
 Details_table.heading('Weight', text='Weight')
@@ -158,13 +158,12 @@ Details_table.pack(fill=BOTH,expand=1)
 
 # Button
 add=Button(root, text="Add", font=("Mulish", 18), bg = ("#8E8EBC"),fg="White", width=9 , height=1, command=addnew_cargo)
-add.place(x=350, y=670)
+add.place(x=550, y=670)
 
-update=Button(root, text="Update", font=("Mulish", 18), bg = ("#8E8EBC"),fg="White", width=9 , height=1 )
-update.place(x=650, y=670)
 
-delete=Button(root, text="Delete", font=("Mulish", 18), bg = ("#8E8EBC"),fg="White", width=9 , height=1)
-delete.place(x=960, y=670)
+
+delete=Button(root, text="Delete", font=("Mulish", 18), bg = ("#8E8EBC"),fg="White", width=9 , height=1, command=delete_cargo_details)
+delete.place(x=750, y=670)
 
 
 
@@ -250,7 +249,9 @@ Logout=Button(root, text="Log Out                ", font=("Herald", 13,"bold"), 
 Logout.place(x=1,y=423)
 
 
-
+# Button to display employees
+display_button = tk.Button(root, text="Display Cargo", font=("Arial", 12, "bold"), bg="#4CAF50", fg="white", bd=0, command=display_cargo)
+display_button.place(x=1070, y=758)
 
 
 root.mainloop()

@@ -1,0 +1,14 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number:47419
+ Consignment ID:N9NSFEPD37
+ Client Name:gcfchg
+ Client Contect:43534
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
+ United Kingdom			1		955
+                                                                    
+                                                                    
+ 			Sub Total:Rs.  955 
+ 			Gov Tax 5(%):Rs.  47.75 
+ 			Total:Rs.  1002.75 
