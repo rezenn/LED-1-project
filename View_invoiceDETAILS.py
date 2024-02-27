@@ -319,7 +319,7 @@ Logout.place(x=1,y=423)
 
 
 # Button to display employees
-display_button = tk.Button(root, text="Display Employees", font=("Arial", 12, "bold"), bg="#4CAF50", fg="white", bd=0, command=display_employees)
+display_button = tk.Button(root, text="Display Invoice", font=("Arial", 12, "bold"), bg="#4CAF50", fg="white", bd=0, command=display_employees)
 display_button.place(x=1070, y=758)
 
 

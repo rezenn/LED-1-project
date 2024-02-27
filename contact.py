@@ -2,21 +2,32 @@ from tkinter import *
 from PIL import ImageTk
 import tkinter.messagebox as messagebox
 
-def employee():
+def invoicedetails():
     root.destroy()
-    import employee
+    import invoiceDetails
+
+
+def viewcargo():
+    root.destroy()
+    import View_cargodetails
+
+def add_new_cargo():
+    root.destroy()
+    import addnewcargo_emp    
+
 
 def about_us():
     root.destroy()
     import about
 
+def contact_us():
+    root.destroy()
+    import contact
+
 def dashboard():
     root.destroy()
-    import dashboard
+    import employeedashboard
 
-def add_new_cargo():
-    root.destroy()
-    import addnewcargo
 
 
 def log_out():
@@ -36,7 +47,7 @@ root.iconbitmap("cargo_icon.ico")
 
 #heading
 
-Label1=Label(root, text="Contact Us", font=("Rubik one", 20), bg="#faeded")
+Label1=Label(root, text="Contact Admin", font=("Rubik one", 20), bg="#faeded")
 Label1.place(x=265, y=30)
 
 
@@ -64,32 +75,27 @@ dashboard_button=Button(root, text="Dashboard", font=("Herald", 13,"bold"), heig
                          fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=dashboard)
 dashboard_button.place(x=1,y=80)
 
-addnewcargo=Button(root, text="Add New Cargo", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740', 
-                   fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=add_new_cargo)
-addnewcargo.place(x=1,y=129)
 
-Viewcargo=Button(root, text="View Cargo", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740',
-                  fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
-Viewcargo.place(x=1,y=178)
-cargotype=Button(root, text="Cargo Type", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740',
-                  fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
-cargotype.place(x=1,y=227)
+add_new_cargo=Button(root, text="Add New Cargo", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740',
+                    fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=add_new_cargo)
+add_new_cargo.place(x=1,y=129)
 
-employee_button=Button(root, text="Employee", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740',
-                 fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=employee)
-employee_button.place(x=1,y=276)
+View_cargo=Button(root, text="View Cargo Details", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740',
+                  fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=viewcargo)
+View_cargo.place(x=1,y=178)
+view_invoice_details=Button(root, text="View Invoice Details", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740',
+                 fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=invoicedetails)
+view_invoice_details.place(x=1,y=227)
+#employee_button=Button(root, text="Employee", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', 
+                #fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=employee)
+#employee_button.place(x=1,y=276)
 
-About_us_button=Button(root, text="About Us", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740',
-                fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=about_us)
-About_us_button.place(x=1,y=325)
-
-contact_us_button=Button(root, text="Contact Us", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740',
-                  fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
-contact_us_button.place(x=1,y=374)
-
+contact_admin=Button(root, text="Contact Admin", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740',
+                  fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=contact_us)
+contact_admin.place(x=1,y=276)
 Logout=Button(root, text="Log Out", font=("Herald", 13,"bold"), command=log_out, height=2, width=22, bg='#363740', 
               fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
-Logout.place(x=1,y=423)
+Logout.place(x=1,y=325)
 
 
 #contact info
