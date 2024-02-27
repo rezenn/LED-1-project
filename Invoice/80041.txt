@@ -1,0 +1,14 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number:80041
+ Consignment ID:S6IRFM4ZL1
+ Client Name:dfs
+ Client Contect:rr
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
+ United States			155		1070
+                                                                    
+                                                                    
+ 			Sub Total:Rs.  165850 
+ 			Gov Tax 5(%):Rs.  8292.5 
+ 			Total:Rs.  174142.5 

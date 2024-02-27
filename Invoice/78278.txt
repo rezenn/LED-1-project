@@ -1,0 +1,14 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number:78278
+ Consignment ID:S3ISX749R7
+ Client Name:rdfghjk
+ Client Contect:
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
+ Thailand			1000		650
+                                                                    
+                                                                    
+ 			Sub Total:Rs.  650000 
+ 			Gov Tax 5(%):Rs.  32500.0 
+ 			Total:Rs.  682500.0 

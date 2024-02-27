@@ -1,0 +1,14 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number:84448
+ Consignment ID:D31CGZFDPM
+ Client Name:wertyuj
+ Client Contect:wertyhjk
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
+ Thailand			10256		650
+                                                                    
+                                                                    
+ 			Sub Total:Rs.  6666400 
+ 			Gov Tax 5(%):Rs.  333320.0 
+ 			Total:Rs.  6999720.0 

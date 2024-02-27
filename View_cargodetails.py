@@ -34,9 +34,64 @@ def add_new_cargo():
     root.destroy()
     import addnewcargo
 
+<<<<<<< HEAD
 def dashboard():
     root.destroy()
     import dashboard
+=======
+def display_cargo():
+    print("Displaying Cargo Info...")
+    # Connect to MySQL database
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="root",
+        database="cargo_mngt"
+    )
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM cargos")
+    rows = cursor.fetchall()
+
+    # Clear existing data in the table
+    for row in Details_table.get_children():
+        Details_table.delete(row)
+
+    # Insert the fetched rows into the table
+    for row in rows:
+        Details_table.insert('', 'end', values=(row[1], row[11], row[2], row[5], row[6], row[9], row[8], row[18], row[12], row[13]))
+    conn.close()
+
+def delete_cargo_details():
+    selected_item = Details_table.selection()
+    if not selected_item:
+        messagebox.showerror("Error", "Please select an cargo to delete.")
+        return
+    
+    for item in selected_item:
+        # Get the cargo id from the selected item
+        consignment_id = Details_table.item(item, 'values')[0]
+
+    # Connect to MySQL database
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="root",
+        database="cargo_mngt"
+    )
+    cursor = conn.cursor()
+
+    # Execute the SQL query to delete the selected employee
+    cursor.execute("DELETE FROM cargos WHERE consignment_id = %s", (consignment_id,))
+    conn.commit()
+    messagebox.showinfo("Status", "cargo deleted successfully")
+
+    conn.close()
+    Details_table.delete(selected_item)
+
+
+
+
+>>>>>>> 8dfc5beb3f47bde5783a5a8a7d97bca39201400f
 #heading
 
 Label1=Label(root, text="View Cargo Details", font=("Rubik one", 20))
