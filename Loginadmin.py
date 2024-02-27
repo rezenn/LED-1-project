@@ -7,9 +7,10 @@ def admin_login():
     #login information of admin
     if username_entry.get() == "admin123" and password_entry.get() == "asdfg@123":
         root.destroy()
-        import addnewcargo
+        import dashboard
     else:
         messagebox.showinfo("Error","Incorrect username or password")
+
 
 
 def password_visual():

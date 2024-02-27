@@ -22,7 +22,7 @@ def viewcargo():
 #test function
 def add_new_cargo():
     root.destroy()
-    import addnewcargo
+    import addnewcargo_emp
 
 
    
@@ -112,9 +112,9 @@ Invoice_Details=Button(root, text="Invoice Details", font=("Herald", 13,"bold"),
                  bd=0, cursor="hand2", activebackground="#e0dcdc",command=invoicedetails)
 Invoice_Details.place(x=863,y=140)
 
-employees=Button(root, text="Employee", font=("Herald", 13,"bold"), height=6, width=17, bg='#363740', fg='white', 
+ContactAdmin=Button(root, text="Contact Admin", font=("Herald", 13,"bold"), height=6, width=17, bg='#363740', fg='white', 
                 bd=0, cursor="hand2", activebackground="#e0dcdc",command=employee)
-employees.place(x=223,y=340)
+ContactAdmin.place(x=223,y=340)
 
 Aboutus=Button(root, text="About Us", font=("Herald", 13,"bold"), height=6, width=17, bg='#363740', fg='white',
                 bd=0, cursor="hand2", activebackground="#e0dcdc",command=about_us)

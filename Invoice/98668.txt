@@ -1,0 +1,8 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number: 98668
+ Consignment ID: 
+ Client Name: 
+ Client Contect: 
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
