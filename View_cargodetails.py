@@ -4,6 +4,7 @@ import tkinter as tk
 from tkinter.messagebox import askyesno, askquestion
 from tkinter import messagebox
 from PIL import Image, ImageTk
+import mysql.connector
 
 
 
