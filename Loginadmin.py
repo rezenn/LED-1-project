@@ -2,15 +2,37 @@ from tkinter import *
 from tkinter import ttk
 import tkinter.messagebox as messagebox
 from PIL import Image, ImageTk
+import mysql.connector as mysql
 
-def admin_login():
-    #login information of admin
-    if username_entry.get() == "admin123" and password_entry.get() == "asdfg@123":
-        root.destroy()
-        import addnewcargo
+
+def admin_log():
+    # Get values from Entry widgets
+    email = email_entry.get()
+    password = password_entry.get()
+
+    if email == "" or password == "":
+        messagebox.showerror("Error", "Enter both email and password")
     else:
-        messagebox.showinfo("Error","Incorrect username or password")
+        con = mysql.connect(
+            host="localhost",
+            user="root",
+            password="root"
+        )
+        cursor = con.cursor()
 
+        # Select the database
+        query = "USE cargo_mngt"
+        cursor.execute(query)
+
+        query = "SELECT * FROM admin WHERE email=%s AND password=%s"
+        cursor.execute(query, (email, password))
+        row = cursor.fetchone()
+
+        if row is None:
+            messagebox.showerror("Error", "Invalid entry")
+        else:
+            root.destroy()
+            import dashboard        
 
 def password_visual():
     # Show and hide password with eye button
@@ -48,14 +70,14 @@ heading3 = Label(root, text='Enter your username and password below', font=("Ari
 heading3.place(x=163, y=310)
 
 # username
-username = Label(root, text='USERNAME', font=("Zen Dots", 7, "bold"), bg="#e0dcdc")
-username.place(x=135, y=365)
+email_label = Label(root, text='Email', font=("Zen Dots", 7, "bold"), bg="#e0dcdc")
+email_label.place(x=135, y=365)
 
-username_entry = Entry(root, width=32, font=('Herald', 13))
-username_entry.place(x=135, y=380)
+email_entry = Entry(root, width=32, font=('Herald', 13))
+email_entry.place(x=135, y=380)
 
 # password
-password_label = Label(root, text='PASSWORD', font=("Zen Dots", 7, "bold"), bg="#e0dcdc")
+password_label = Label(root, text='Password', font=("Zen Dots", 7, "bold"), bg="#e0dcdc")
 password_label.place(x=135, y=425)
 
 password_entry = Entry(root, width=32, font=('Herald', 13), show='*')
@@ -70,7 +92,7 @@ showhide.place(x=400, y=442)
 
 # login button
 loginbutton = Button(root, text="Log in", font=("Open Sans", 13, "bold"), bg="black", fg="White", cursor="hand2",
-                    activeforeground="black", bd=0, width=28,command=admin_login)
+                    activeforeground="black", bd=0, width=28,command=admin_log)
 loginbutton.place(x=135, y=520)
 
 

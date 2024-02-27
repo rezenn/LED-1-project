@@ -32,7 +32,7 @@ def display_cargo():
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM cargos")
     rows = cursor.fetchall()
-
+#uuk
     # Clear existing data in the table
     for row in Details_table.get_children():
         Details_table.delete(row)
