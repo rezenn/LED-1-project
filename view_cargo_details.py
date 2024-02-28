@@ -9,7 +9,7 @@ import mysql.connector
 
 def view_invoice_details():
     root.destroy()
-    import view_invoice_details
+    import invoicedetail_admin
 
 
 def employee():

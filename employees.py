@@ -162,7 +162,7 @@ def update_employee():
 root = Tk()
 root.geometry('1280x800')
 root.resizable(0, 0)
-# root.title('Add New Cargo')
+root.title('Employee')
 root.iconbitmap("cargo_icon.ico")
 
 Frame1=Frame(root, height="677",width="977", bg="#e0dcdc")

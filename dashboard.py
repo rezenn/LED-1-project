@@ -92,12 +92,9 @@ frame5.place(x=535,y=332)
 
 
 
-#leftside
 
-#Frame2=Frame(root,height="800",width="210",bg="#363740")
-#Frame2.place(x=0,y=1)
 
-cargo=Label(root, text="                                                         Cargo Management System                                                                                  ", font=('Rubik one', 22, 'bold'), bg=('#363740'), fg='white')
+cargo=Label(root, text="Cargo Management System", font=('Rubik one', 22, 'bold'), bg=('#363740'), fg='white')
 cargo.place(x=0,y=2)
 
 addnewcargo=Button(root, text="Add New Cargo", font=("Herald", 13,"bold"),height=6,  width=17, bg='#363740', fg='white',
