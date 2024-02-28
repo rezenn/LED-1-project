@@ -4,13 +4,6 @@ import tkinter.messagebox as messagebox
 from PIL import Image, ImageTk
 import mysql.connector as mysql
 
-<<<<<<< HEAD
-def admin_login():
-    #login information of admin
-    if username_entry.get() == "admin123" and password_entry.get() == "asdfg@123":
-        root.destroy()
-        import dashboard
-=======
 
 def admin_log():
     # Get values from Entry widgets
@@ -19,7 +12,6 @@ def admin_log():
 
     if email == "" or password == "":
         messagebox.showerror("Error", "Enter both email and password")
->>>>>>> 8dfc5beb3f47bde5783a5a8a7d97bca39201400f
     else:
         con = mysql.connect(
             host="localhost",

@@ -27,8 +27,8 @@ def update_login_info():
         cursor = con.cursor()
 
         # Use parameterized query to prevent SQL injection
-        cursor.execute("UPDATE register SET password=%s, confirm_password=%s WHERE email=%s, name=%s, contact=%s,",
-                       (new_password, confirm_password, email, name, contact))
+        cursor.execute("UPDATE register SET password=%s, confirm_password=%s WHERE email=%s",
+                       (new_password, confirm_password, email))
 
         con.commit()
         messagebox.showinfo("Status", "Successfully updated")

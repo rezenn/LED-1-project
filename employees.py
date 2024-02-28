@@ -3,34 +3,26 @@ from tkinter import ttk
 from tkinter import messagebox
 import tkinter as tk
 import mysql.connector
-from PIL import Image, ImageTk
 
-def invoicedetails():
+def invoice_details():
+    print("clicked")
     root.destroy()
-    import invoiceDetails
+    import invoicedetail_admin
 
-def employee():
+def about_us():
     root.destroy()
-    import employees
-
-
+    import about
 
 def viewcargo():
     root.destroy()
-    import View_cargodetails
+    import view_cargo_details
 #test function
 def add_new_cargo():
     root.destroy()
     import addnewcargo
-
 def dashboard():
     root.destroy()
     import dashboard
-
-
-
-
-
 
 def display_employees():
     print("Displaying employees...")
@@ -53,9 +45,6 @@ def display_employees():
     for row in rows:
         tree.insert('', 'end', values=(row[0], row[1], row[2], row[3], row[4], row[5], row[6]))
     conn.close()
-
-
-
 # Add New Employee Function
 def add_employee():
     print("Adding employee...")
@@ -67,8 +56,6 @@ def add_employee():
     email = email_entry.get()
     contact = contact_entry.get()
     username = username_entry.get()
-    
-
     print("Employee ID:", employee_id)
     print("Name:", name)  
     print("Post:", post)
@@ -76,8 +63,6 @@ def add_employee():
     print("Email:", email)
     print("Contact:", contact)
     print("Username:", username)
-
-
 # Connect to MySQL database
     conn = mysql.connector.connect(
         host="localhost",
@@ -177,7 +162,7 @@ def update_employee():
 root = Tk()
 root.geometry('1280x800')
 root.resizable(0, 0)
-root.title('Add New Cargo')
+# root.title('Add New Cargo')
 root.iconbitmap("cargo_icon.ico")
 
 Frame1=Frame(root, height="677",width="977", bg="#e0dcdc")
@@ -254,17 +239,8 @@ Frame2.place(x=0, y=1)
 
 #left side
 
-
-
-
 cargo=Label(root, text="Cargo Management System", font=('Herald', 11, 'bold'), bg=('#363740'), fg='white')
 cargo.place(x=28,y=2)
-
-
-#image
-logo=ImageTk.PhotoImage(file='logo.jpg')
-bglabel=Label(root,image=logo)
-bglabel.place(x=5,y=2)
 
 dashboard_button=Button(root, text="Dashboard", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740',
                          fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=dashboard)
@@ -273,14 +249,21 @@ addnew_cargo=Button(root, text="Add New Cargo", font=("Herald", 13,"bold"),heigh
                     fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc", command=add_new_cargo)
 addnew_cargo.place(x=1,y=129)
 View_cargo=Button(root, text="View Cargo Details", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740',
-                  fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc", command=viewcargo)
+                  fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc", command= viewcargo)
 View_cargo.place(x=1,y=178)
-invoiceDetails=Button(root, text="Invoice Details", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740',
-                 fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc", command=invoicedetails)
+
+# invoiceDetails=Button(root, text="Invoice Details", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740',
+#                  fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc", co)
+# invoiceDetails.place(x=1,y=227)
+
+invoiceDetails=Button(root, text="Invoice Details", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', 
+                fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc", command=invoice_details)
 invoiceDetails.place(x=1,y=227)
+
 employee_button=Button(root, text="Employee", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', 
-                fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=employee)
+                fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
 employee_button.place(x=1,y=276)
+
 
 #command fro logout
 def log_out():
@@ -293,8 +276,6 @@ def log_out():
 Logout=Button(root, text="Log Out", font=("Herald", 13,"bold"), command=log_out, height=2, width=22, bg='#363740', 
               fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
 Logout.place(x=1,y=325)
-
-
 #TABLE
 
 # Create a Frame for the table

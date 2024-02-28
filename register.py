@@ -65,7 +65,7 @@ def create():
         
         cursor.execute("INSERT INTO register (name,contact,email,password,confirm_password) VALUES (%s, %s, %s, %s, %s)", (name, contact, email, password, confirm_password))
         con.commit()
-        messagebox.showinfo("Status", " ")
+        messagebox.showinfo("Status", " Registered Successfully")
         con.close()
         clear()
 

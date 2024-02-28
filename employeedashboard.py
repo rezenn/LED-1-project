@@ -4,21 +4,25 @@ from PIL import Image, ImageTk
 import tkinter.messagebox as messagebox
 
 
-def invoicedetails():
+def view_invoice_details():
     root.destroy()
-    import invoiceDetails
+    import invoicedetails
 
 def employee():
     root.destroy()
     import employees
+   
+def contact():
+    root.destroy()
+    import contact
 
 def about_us():
     root.destroy()
-    import about
+    import about_emp
 
 def viewcargo():
     root.destroy()
-    import View_cargodetails
+    import emp_viewcargodetails
 #test function
 def add_new_cargo():
     root.destroy()
@@ -109,20 +113,16 @@ Viewcargo=Button(root, text="View Cargo Details", font=("Herald", 13,"bold"),hei
 Viewcargo.place(x=543,y=140)
 
 Invoice_Details=Button(root, text="Invoice Details", font=("Herald", 13,"bold"), height=6, width=17, bg='#363740', fg='white', 
-                 bd=0, cursor="hand2", activebackground="#e0dcdc",command=invoicedetails)
+                 bd=0, cursor="hand2", activebackground="#e0dcdc",command=view_invoice_details)
 Invoice_Details.place(x=863,y=140)
 
 ContactAdmin=Button(root, text="Contact Admin", font=("Herald", 13,"bold"), height=6, width=17, bg='#363740', fg='white', 
-                bd=0, cursor="hand2", activebackground="#e0dcdc",command=employee)
+                bd=0, cursor="hand2", activebackground="#e0dcdc",command=contact)
 ContactAdmin.place(x=223,y=340)
 
 Aboutus=Button(root, text="About Us", font=("Herald", 13,"bold"), height=6, width=17, bg='#363740', fg='white',
                 bd=0, cursor="hand2", activebackground="#e0dcdc",command=about_us)
 Aboutus.place(x=543,y=340)
-
-#contactus=Button(root, text="Contact Us", font=("Herald", 13,"bold"), height=6, width=17, bg='#363740', fg='white', 
-                # bd=0, cursor="hand2", activebackground="#e0dcdc",command=contact_us)
-#contactus.place(x=946,y=328)
 
 Logout=Button(root, text="Log Out", font=("Herald", 13,"bold"), command=log_out, height=2, width=15, bg='#363740', 
               fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")

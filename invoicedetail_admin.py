@@ -6,26 +6,26 @@ from tkinter import messagebox
 from PIL import Image, ImageTk
 import mysql.connector
 
-def dashboard():
+def viewcargo():
     root.destroy()
-    import dashboard
-
-def about_us():
-    root.destroy()
-    import about
-
-def contact_us():
-    root.destroy()
-    import contact
+    import view_cargo_details
 
 def add_new_cargo():
     root.destroy()
-    import addnewcargo
+    import addnewcargo   
+
+def view_invoice():
+    root.destroy()
+    import invoicedetails
 
 def employees():
     root.destroy()
-    import employees
+    import invoicedetail_admin
 
+def dashboard():
+    root.destroy()
+    import dashboard
+#ff
 def log_out():
     msg_box = messagebox.askquestion('Log out Application', 'Are you sure you want to exit the application?', icon='warning')
     if msg_box == 'yes':
@@ -46,66 +46,9 @@ root.iconbitmap("cargo_icon.ico")
 def addnew_cargo():
     root.destroy()
     import addnewcargo
-
-def display_employees():
-    print("Displaying employees...")
-    # Connect to MySQL database
-    conn = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="root",
-        database="cargo_mngt"
-    )
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM employees")
-    rows = cursor.fetchall()
-
-    # Clear existing data in the table
-    for row in Details_table.get_children():
-        Details_table.delete(row)
-
-    # Insert the fetched rows into the table
-    for row in rows:
-        Details_table.insert('', 'end', values=(row[0], row[1], row[2], row[3], row[4], row[5], row[6]))
-    conn.close()
-
-def delete_cargo_details():
-    selected_item = Details_table.selection()
-    if not selected_item:
-        messagebox.showerror("Error", "Please select an employee to delete.")
-        return
-    
-    for item in selected_item:
-        # Get the employee ID from the selected item
-        employee_id = Details_table.item(item, 'values')[0]
-
-    # Connect to MySQL database
-    conn = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="root",
-        database="cargo_mngt"
-    )
-    cursor = conn.cursor()
-
-    # Execute the SQL query to delete the selected employee
-    cursor.execute("DELETE FROM employees WHERE employee_id = %s", (employee_id,))
-    conn.commit()
-    messagebox.showinfo("Status", "Employee deleted successfully")
-
-    conn.close()
-    Details_table.delete(selected_item)
-
-
-
-
-
-
-
-#search
     
 def search_button():
-    search_value = consignment_entry.get()
+    search_value = bill_entry.get()
     if not search_value:
         messagebox.showerror("Error", "Please enter a search value.")
         return
@@ -121,7 +64,7 @@ def search_button():
 
     try:
         # Execute SQL query to search for data
-        cursor.execute("SELECT * FROM mngt WHERE Consignment_ID = %s", (search_value,))
+        cursor.execute("SELECT * FROM cargos WHERE invoice_id = %s", (search_value,))
         rows = cursor.fetchall()
 
         if not rows:
@@ -138,6 +81,58 @@ def search_button():
         messagebox.showerror("Error", f"Error: {err}")
     
     conn.close()
+
+def display_invoice():
+    print("Displaying Cargo Info...")
+    # Connect to MySQL database
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="root",
+        database="cargo_mngt"
+    )
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM cargos")
+    rows = cursor.fetchall()
+#uuk
+    # Clear existing data in the table
+    for row in Details_table.get_children():
+        Details_table.delete(row)
+
+    # Insert the fetched rows into the table
+    for row in rows:
+        Details_table.insert('', 'end', values=(row[1], row[14], row[2], row[5], row[6], row[9], row[8], row[18], row[12], row[13]))
+    conn.close()
+
+
+def delete_cargo_details():
+    selected_item = Details_table.selection()
+    if not selected_item:
+        messagebox.showerror("Error", "Please select an bill info to delete.")
+        return
+    
+    for item in selected_item:
+        # Get the cargo id from the selected item
+        bill_entry = Details_table.item(item, 'values')[0]
+
+    # Connect to MySQL database
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="root",
+        database="cargo_mngt"
+    )
+    cursor = conn.cursor()
+
+    # Execute the SQL query to delete the selected employee
+    cursor.execute("DELETE FROM cargos WHERE consignment_id = %s", (bill_entry,))
+    conn.commit()
+    messagebox.showinfo("Status", "bill deleted successfully")
+
+    conn.close()
+    Details_table.delete(selected_item)
+
+
 
 
 
@@ -161,11 +156,11 @@ boldframe.place(x=265,y=90,width=920,height=650)
 
 #search button 
 
-search_frame=Label(root, text="Bill No:", font=("Mulish", 12), bg="#e0dcdc")
-search_frame.place(x=300,y=123)
+bill_no=Label(root, text="Bill No:", font=("Mulish", 12), bg="#e0dcdc")
+bill_no.place(x=300,y=123)
 
-consignment_entry = tk.Entry(root, width=16, font=('Herald', 12))
-consignment_entry.place(x=355,y=123)
+bill_entry = tk.Entry(root, width=16, font=('Herald', 12))
+bill_entry.place(x=355,y=123)
 
 Search_button = tk.Button(root, text="  Search  ", font=("Herald", 9),cursor="hand2",command=search_button)
 Search_button.place(x=520,y=120)
@@ -276,29 +271,29 @@ cargo=Label(root, text="Cargo Management System", font=('Herald', 11, 'bold'), b
 cargo.place(x=32,y=6)
 
 
-dashboard_button=Button(root, text="Dashboard", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0,cursor="hand2", activebackground="#e0dcdc",command=dashboard)
+dashboard_button=Button(root, text="Dashboard", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740',
+                         fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=dashboard)
 dashboard_button.place(x=1,y=80)
 
-add_new_cargo_button=Button(root, text="Add New Cargo", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=add_new_cargo)
-add_new_cargo_button.place(x=1,y=129)
 
-Viewcargo=Button(root, text="View Cargo", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740', fg='white', bd=0,  cursor="hand2", activebackground="#e0dcdc",)
-Viewcargo.place(x=1,y=178)
+add_new_cargo1=Button(root, text="Add New Cargo", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740',
+                    fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=addnew_cargo  )
+add_new_cargo1.place(x=1,y=129)
 
-invoicedetails=Button(root, text="Invoice Details", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
-invoicedetails.place(x=1,y=227)
+View_cargo=Button(root, text="View Cargo Details", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740',
+                  fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=viewcargo)
+View_cargo.place(x=1,y=178)
+view_invoice_details=Button(root, text="View Invoice Details", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740',
+                 fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc", command=view_invoice)
+view_invoice_details.place(x=1,y=227)
 
-employee_button=Button(root, text="Employee", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0,  cursor="hand2", activebackground="#e0dcdc",command=employees)
-employee_button.place(x=1,y=276)
 
-About_us_button=Button(root, text="About Us", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=about_us)
-About_us_button.place(x=1,y=325)
-
-contact_us_button=Button(root, text="Contact Us", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0,   cursor="hand2", activebackground="#e0dcdc",command=contact_us)
-contact_us_button.place(x=1,y=374)
+employee=Button(root, text="Employee", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740',
+                  fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=employees)
+employee.place(x=1,y=276)
 
 Logout=Button(root, text="Log Out", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=log_out)
-Logout.place(x=1,y=423)
+Logout.place(x=1,y=325)
 
 
 
@@ -314,12 +309,10 @@ def log_out():
 
 
 
-Logout=Button(root, text="Log Out", font=("Herald", 13,"bold"), command=log_out, height=2, width=22, bg='#363740', fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
-Logout.place(x=1,y=423)
 
 
 # Button to display employees
-display_button = tk.Button(root, text="Display Invoice", font=("Arial", 12, "bold"), bg="#4CAF50", fg="white", bd=0, command=display_employees)
+display_button = tk.Button(root, text="Display Invoice", font=("Arial", 12, "bold"), bg="#4CAF50", fg="white", bd=0, command=display_invoice)
 display_button.place(x=1070, y=758)
 
 

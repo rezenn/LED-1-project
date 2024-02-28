@@ -4,12 +4,12 @@ import tkinter.messagebox as messagebox
 
 def invoicedetails():
     root.destroy()
-    import invoiceDetails
+    import invoicedetails
 
 
 def viewcargo():
     root.destroy()
-    import View_cargodetails
+    import emp_viewcargodetails
 
 def add_new_cargo():
     root.destroy()
@@ -76,9 +76,9 @@ dashboard_button=Button(root, text="Dashboard", font=("Herald", 13,"bold"), heig
 dashboard_button.place(x=1,y=80)
 
 
-add_new_cargo=Button(root, text="Add New Cargo", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740',
+add_new_cargo1=Button(root, text="Add New Cargo", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740',
                     fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=add_new_cargo)
-add_new_cargo.place(x=1,y=129)
+add_new_cargo1.place(x=1,y=129)
 
 View_cargo=Button(root, text="View Cargo Details", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740',
                   fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=viewcargo)
@@ -101,33 +101,32 @@ Logout.place(x=1,y=325)
 #contact info
 
 long_text="""
-Our Branches
+Admins
 
 Greetings Cargo Global
- 123 Shipping Lane
- Cityscape Central, Globalville
+ Admin:Jhon 
+ Admin:James
 Contact Information:
  Phone: +1 (555) 123-4567
               +1 (555) 876-5432 
-Email: info@greetingscargoglobal.com")
+Email: Jhon@greetingscargoglobal.com
+        James@greetingscargoglobal.com
 
-
+        
 Greetings Cargo Global
-789 Freight Avenue
- Metropolitan Hub, Worldport
+Admin:Jessi 
 Contact Information:
  Phone: +1 (555) 987-6543
               +1 (555) 234-5678
-Email: info@greetingscargoglobal.com
+Email: Jessi@greetingscargoglobal.com
 
 
 Seamless Cargo Solutions
-789 Express Lane
-Metropolitan Plaza, Portside
+Admin:Jane 
 Contact Information:
 Phone: +1 (555) 789-0123
               +1 (555) 345-6789
-Email: info@seamlesscargosolutions.com
+Email: Jane@seamlesscargosolutions.com
 """
 info=Label(root,text=long_text,font=("Herald",14),bg="#e0dcdc")
 info.place(x=525,y=90)

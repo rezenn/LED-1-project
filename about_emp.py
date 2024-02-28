@@ -4,7 +4,7 @@ import tkinter.messagebox as messagebox
 
 def dashboard():
     root.destroy()
-    import dashboard
+    import employeedashboard
 
 
 def log_out():
@@ -28,10 +28,6 @@ root.iconbitmap("cargo_icon.ico")
 cargo=Label(root, text="                                                         Cargo Management System                                                                                  ", font=('Rubik one', 22, 'bold'), bg=('#363740'), fg='white')
 cargo.place(x=0,y=2)
 
-#image
-logo_img=ImageTk.PhotoImage(file="logo.jpg")
-logo=Label(root,image=logo_img)
-logo.place(x=420,y=5)
 
 #Buttons
 

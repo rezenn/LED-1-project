@@ -1,0 +1,14 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number:64614
+ Consignment ID:R6USZ6JFSQ
+ Client Name:dfxghnh
+ Client Contect:345
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
+ Thailand			155451		650
+                                                                    
+                                                                    
+ 			Sub Total:Rs.  101043150 
+ 			Gov Tax 5(%):Rs.  5052157.5 
+ 			Total:Rs.  106095307.5 

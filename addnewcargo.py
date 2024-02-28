@@ -10,24 +10,26 @@ import random, os
 import mysql.connector as mysql
 import random,os
 
+
 def invoicedetails():
     root.destroy()
-    import invoiceDetails
+    import invoicedetail_admin
 
 def employee():
     root.destroy()
     import employees
 
-
+def about_us():
+    root.destroy()
+    import about
 
 def viewcargo():
     root.destroy()
-    import View_cargodetails
+    import view_cargo_details
 #test function
 def add_new_cargo():
     root.destroy()
     import addnewcargo
-
 def dashboard():
     root.destroy()
     import dashboard

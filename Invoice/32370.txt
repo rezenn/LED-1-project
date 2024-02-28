@@ -1,0 +1,14 @@
+	             CARGO MANAGEMENT SYSTEM                               
+ Bill Number:32370
+ Consignment ID:Q21MWM55XW
+ Client Name:fchgcf
+ Client Contect:6546584
+-----------------------------------------------------------------------------------------
+ Cargo Destination			Weight		Rate Per Kg
+-----------------------------------------------------------------------------------------
+ United Kingdom			1		955
+                                                                    
+                                                                    
+ 			Sub Total:Rs.  955 
+ 			Gov Tax 5(%):Rs.  47.75 
+ 			Total:Rs.  1002.75 

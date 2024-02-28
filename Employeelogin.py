@@ -38,7 +38,7 @@ def login_user():
             messagebox.showerror("Error", "Invalid entry")
         else:
             root.destroy()
-            import contact
+            import employeedashboard
 
 def password_visual():
     # Show and hide password with eye button

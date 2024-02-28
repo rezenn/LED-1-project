@@ -10,23 +10,20 @@ import random, os
 import mysql.connector as mysql
 import random,os
 
-def invoicedetails():
+def view_invoice_details():
     root.destroy()
-    import invoiceDetails
+    import invoicedetails
 
 
 def viewcargo():
     root.destroy()
-    import View_cargodetails
+    import emp_viewcargodetails
 
-#def add_new_cargo():
-    #root.destroy()
-    #import addnewcargo_emp    
-
-
-def about_us():
+def add_new_cargo():
     root.destroy()
-    import about
+    import addnewcargo_emp    
+
+
 
 def contact_us():
     root.destroy()
@@ -82,7 +79,7 @@ def create():
                 (consignment_id, sender_name, sender_address, sender_pin_code, sender_contact, receiver_name, receiver_address, receiver_pin_code, receiver_contact, from_country, to_country, weight, cargo_category, bill, rate_per_kg, sub_total_db, gov_tax_db, total_amt_db)
             )
             con.commit()
-            messagebox.showinfo("Status", "Successfully registered")
+            messagebox.showinfo("Status", "Successfully Added")
         except mysql.Error as e:
             print(f"Error: {e}")
             con.rollback()
@@ -438,15 +435,15 @@ dashboard_button=Button(root, text="Dashboard", font=("Herald", 13,"bold"), heig
 dashboard_button.place(x=1,y=80)
 
 
-add_new_cargo=Button(root, text="Add New Cargo", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740',
+addnew_cargo=Button(root, text="Add New Cargo", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740',
                     fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",  )
-add_new_cargo.place(x=1,y=129)
+addnew_cargo.place(x=1,y=129)
 
 View_cargo=Button(root, text="View Cargo Details", font=("Herald", 13,"bold"),height=2,  width=22, bg='#363740',
                   fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=viewcargo)
 View_cargo.place(x=1,y=178)
 view_invoice_details=Button(root, text="View Invoice Details", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740',
-                 fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=invoicedetails)
+                 fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=view_invoice_details)
 view_invoice_details.place(x=1,y=227)
 #employee_button=Button(root, text="Employee", font=("Herald", 13,"bold"), height=2, width=22, bg='#363740', 
                 #fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc",command=employee)
@@ -466,7 +463,7 @@ def log_out():
 Logout=Button(root, text="Log Out", font=("Herald", 13,"bold"), command=log_out, height=2, width=22, bg='#363740', 
               fg='white', bd=0, cursor="hand2", activebackground="#e0dcdc")
 Logout.place(x=1,y=325)
-# ... (Rest of your code)
+
 
 root.mainloop()
 
